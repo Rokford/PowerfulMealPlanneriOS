@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UITabBarController
+@interface ShoppingListViewController
+    : UITableViewController <UITableViewDelegate, UITableViewDataSource>
 
 @end

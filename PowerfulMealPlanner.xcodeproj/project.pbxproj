@@ -7,10 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C95A6FEA1B7C850900D165D3 /* PMPTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C95A6FE91B7C850900D165D3 /* PMPTableViewCell.m */; };
+		C96888BB1B7B863400610097 /* AddShoppingItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C96888BA1B7B863400610097 /* AddShoppingItemViewController.m */; };
 		C969B0631B78963900679069 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C969B0621B78963900679069 /* main.m */; };
 		C969B0661B78963900679069 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C969B0651B78963900679069 /* AppDelegate.m */; };
 		C969B0691B78963900679069 /* PowerfulMealPlanner.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C969B0671B78963900679069 /* PowerfulMealPlanner.xcdatamodeld */; };
-		C969B06C1B78963900679069 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C969B06B1B78963900679069 /* ViewController.m */; };
+		C969B06C1B78963900679069 /* ShoppingListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C969B06B1B78963900679069 /* ShoppingListViewController.m */; };
 		C969B06F1B78963900679069 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C969B06D1B78963900679069 /* Main.storyboard */; };
 		C969B0711B78963900679069 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C969B0701B78963900679069 /* Images.xcassets */; };
 		C969B0741B78963900679069 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C969B0721B78963900679069 /* LaunchScreen.xib */; };
@@ -28,14 +30,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C95A6FE81B7C850900D165D3 /* PMPTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMPTableViewCell.h; sourceTree = "<group>"; };
+		C95A6FE91B7C850900D165D3 /* PMPTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMPTableViewCell.m; sourceTree = "<group>"; };
+		C96888B91B7B863400610097 /* AddShoppingItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddShoppingItemViewController.h; sourceTree = "<group>"; };
+		C96888BA1B7B863400610097 /* AddShoppingItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddShoppingItemViewController.m; sourceTree = "<group>"; };
 		C969B05D1B78963900679069 /* PowerfulMealPlanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PowerfulMealPlanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C969B0611B78963900679069 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C969B0621B78963900679069 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C969B0641B78963900679069 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C969B0651B78963900679069 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		C969B0681B78963900679069 /* PowerfulMealPlanner.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PowerfulMealPlanner.xcdatamodel; sourceTree = "<group>"; };
-		C969B06A1B78963900679069 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		C969B06B1B78963900679069 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		C969B06A1B78963900679069 /* ShoppingListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShoppingListViewController.h; sourceTree = "<group>"; };
+		C969B06B1B78963900679069 /* ShoppingListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShoppingListViewController.m; sourceTree = "<group>"; };
 		C969B06E1B78963900679069 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C969B0701B78963900679069 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		C969B0731B78963900679069 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -85,9 +91,14 @@
 			children = (
 				C969B0641B78963900679069 /* AppDelegate.h */,
 				C969B0651B78963900679069 /* AppDelegate.m */,
-				C969B06A1B78963900679069 /* ViewController.h */,
-				C969B06B1B78963900679069 /* ViewController.m */,
+				C969B06A1B78963900679069 /* ShoppingListViewController.h */,
+				C969B06B1B78963900679069 /* ShoppingListViewController.m */,
+				C96888B91B7B863400610097 /* AddShoppingItemViewController.h */,
+				C96888BA1B7B863400610097 /* AddShoppingItemViewController.m */,
+				C95A6FE81B7C850900D165D3 /* PMPTableViewCell.h */,
+				C95A6FE91B7C850900D165D3 /* PMPTableViewCell.m */,
 				C969B06D1B78963900679069 /* Main.storyboard */,
+				C969B0611B78963900679069 /* Info.plist */,
 				C969B0701B78963900679069 /* Images.xcassets */,
 				C969B0721B78963900679069 /* LaunchScreen.xib */,
 				C969B0671B78963900679069 /* PowerfulMealPlanner.xcdatamodeld */,
@@ -99,7 +110,6 @@
 		C969B0601B78963900679069 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				C969B0611B78963900679069 /* Info.plist */,
 				C969B0621B78963900679069 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -222,10 +232,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C96888BB1B7B863400610097 /* AddShoppingItemViewController.m in Sources */,
 				C969B0691B78963900679069 /* PowerfulMealPlanner.xcdatamodeld in Sources */,
 				C969B0661B78963900679069 /* AppDelegate.m in Sources */,
-				C969B06C1B78963900679069 /* ViewController.m in Sources */,
+				C969B06C1B78963900679069 /* ShoppingListViewController.m in Sources */,
 				C969B0631B78963900679069 /* main.m in Sources */,
+				C95A6FEA1B7C850900D165D3 /* PMPTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,6 +432,7 @@
 				C969B0851B78963900679069 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C969B0861B78963900679069 /* Build configuration list for PBXNativeTarget "PowerfulMealPlannerTests" */ = {
 			isa = XCConfigurationList;
@@ -428,6 +441,7 @@
 				C969B0881B78963900679069 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
