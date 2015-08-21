@@ -7,8 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreData/CoreData.h>
 
 @interface ShoppingListViewController
-    : UITableViewController <UITableViewDelegate, UITableViewDataSource>
+    : UITableViewController <UITableViewDelegate, UITableViewDataSource,
+                             NSFetchedResultsControllerDelegate>
+
+@property(strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 
 @end

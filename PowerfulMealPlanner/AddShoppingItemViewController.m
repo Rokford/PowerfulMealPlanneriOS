@@ -20,7 +20,8 @@
 
 @implementation AddShoppingItemViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
   [super viewDidLoad];
 
   self.pickerData = @[
@@ -40,7 +41,8 @@
                         animated:YES];
 }
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
   [super didReceiveMemoryWarning];
   // Dispose of any resources that can be recreated.
 }
@@ -55,7 +57,8 @@ preparation before navigation
     // Pass the selected object to the new view controller.
 }
 */
-- (IBAction)saveItem:(id)sender {
+- (IBAction)saveItem:(id)sender
+{
 
   NSString *itemName = self.nameTextField.text;
   CGFloat itemQuantity = (CGFloat)[self.quantityTextField.text floatValue];
@@ -128,18 +131,29 @@ preparation before navigation
 }
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView
-numberOfRowsInComponent:(NSInteger)component {
+numberOfRowsInComponent:(NSInteger)component
+{
   return self.pickerData.count;
 }
 
-- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
+{
   return 1;
 }
 
 - (NSString *)pickerView:(UIPickerView *)pickerView
              titleForRow:(NSInteger)row
-            forComponent:(NSInteger)component {
+            forComponent:(NSInteger)component
+{
   return self.pickerData[row];
+}
+
+#pragma mark - table view
+
+- (NSInteger)tableView:(UITableView *)tableView
+ numberOfRowsInSection:(NSInteger)section
+{
+  return 0;
 }
 
 @end

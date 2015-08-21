@@ -7,21 +7,148 @@
 //
 
 #import "ShoppingListViewController.h"
+#import "AppDelegate.h"
+#import "PMPTableViewCell.h"
 
 @interface ShoppingListViewController ()
+
+@property(strong, nonatomic)
+    NSFetchedResultsController *fetchedResultsController;
 
 @end
 
 @implementation ShoppingListViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
   [super viewDidLoad];
-  // Do any additional setup after loading the view, typically from a nib.
+
+  AppDelegate *appDelegate =
+      (AppDelegate *)[UIApplication sharedApplication].delegate;
+
+  self.managedObjectContext = appDelegate.managedObjectContext;
+
+  NSFetchRequest *fetchRequest =
+      [[NSFetchRequest alloc] initWithEntityName:@"ShoppingItem"];
+
+  [fetchRequest setSortDescriptors:@[
+    [NSSortDescriptor sortDescriptorWithKey:@"itemName" ascending:YES]
+  ]];
+
+  self.fetchedResultsController = [[NSFetchedResultsController alloc]
+      initWithFetchRequest:fetchRequest
+      managedObjectContext:self.managedObjectContext
+        sectionNameKeyPath:nil
+                 cacheName:nil];
+
+  [self.fetchedResultsController setDelegate:self];
+
+  NSError *error = nil;
+  [self.fetchedResultsController performFetch:&error];
+
+  if (error) {
+    NSLog(@"Unable to perform fetch.");
+    NSLog(@"%@, %@", error, error.localizedDescription);
+  }
 }
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
   [super didReceiveMemoryWarning];
   // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - table view delegate
+
+- (NSInteger)tableView:(UITableView *)tableView
+ numberOfRowsInSection:(NSInteger)section
+{
+  NSArray *sections = [self.fetchedResultsController sections];
+  id<NSFetchedResultsSectionInfo> sectionInfo =
+      [sections objectAtIndex:section];
+
+  return [sectionInfo numberOfObjects];
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+  return [[self.fetchedResultsController sections] count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView
+         cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+  PMPTableViewCell *cell = (PMPTableViewCell *)
+      [self.tableView dequeueReusableCellWithIdentifier:@"ShoppingItemCell"
+                                           forIndexPath:indexPath];
+
+  // Configure Table View Cell
+  [self configureCell:cell atIndexPath:indexPath];
+
+  return cell;
+}
+
+- (void)configureCell:(UITableViewCell *)cell
+          atIndexPath:(NSIndexPath *)indexPath
+{
+  // Fetch Record
+  NSManagedObject *item =
+      [self.fetchedResultsController objectAtIndexPath:indexPath];
+
+  PMPTableViewCell *PMPCell = (PMPTableViewCell *)cell;
+
+  // Update Cell
+  [PMPCell.itemNameLabel setText:[item valueForKey:@"itemName"]];
+  [PMPCell.itemQuantityLabel
+      setText:[[item valueForKey:@"quantity"] stringValue]];
+  [PMPCell.itemUnitLabel setText:[item valueForKey:@"unit"]];
+}
+
+#pragma mark - fetched controller delegate
+
+- (void)controllerWillChangeContent:(NSFetchedResultsController *)controller
+{
+  [self.tableView beginUpdates];
+}
+
+- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller
+{
+  [self.tableView endUpdates];
+}
+
+- (void)controller:(NSFetchedResultsController *)controller
+   didChangeObject:(id)anObject
+       atIndexPath:(NSIndexPath *)indexPath
+     forChangeType:(NSFetchedResultsChangeType)type
+      newIndexPath:(NSIndexPath *)newIndexPath
+{
+  switch (type) {
+  case NSFetchedResultsChangeInsert: {
+    [self.tableView
+        insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath]
+              withRowAnimation:UITableViewRowAnimationFade];
+    break;
+  }
+  case NSFetchedResultsChangeDelete: {
+    [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath]
+                          withRowAnimation:UITableViewRowAnimationFade];
+    break;
+  }
+  case NSFetchedResultsChangeUpdate: {
+    [self configureCell:(PMPTableViewCell *)
+                            [self.tableView cellForRowAtIndexPath:indexPath]
+            atIndexPath:indexPath];
+    break;
+  }
+  case NSFetchedResultsChangeMove: {
+    [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath]
+                          withRowAnimation:UITableViewRowAnimationFade];
+    [self.tableView
+        insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath]
+              withRowAnimation:UITableViewRowAnimationFade];
+    break;
+  }
+  }
 }
 
 @end

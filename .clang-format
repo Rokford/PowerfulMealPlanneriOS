@@ -1,0 +1,10 @@
+---
+BasedOnStyle: LLVM
+BreakBeforeBraces: Linux
+AllowShortIfStatementsOnASingleLine: true
+AllowShortFunctionsOnASingleLine: Inline
+AllowShortBlocksOnASingleLine: true
+Cpp11BracedListStyle: false
+---
+Language: JavaScript
+...
