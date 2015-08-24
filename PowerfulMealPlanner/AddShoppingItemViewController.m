@@ -8,6 +8,7 @@
 
 #import "AddShoppingItemViewController.h"
 #import "AppDelegate.h"
+#import "CommonUnitCell.h"
 
 @interface AddShoppingItemViewController ()
 
@@ -15,6 +16,11 @@
 @property(nonatomic, strong) NSManagedObjectContext *context;
 @property(nonatomic, strong)
     NSFetchedResultsController *fetchedResultsController;
+
+@property(weak, nonatomic) IBOutlet UITableView *quantityTableView;
+@property(weak, nonatomic) IBOutlet UITableView *unitTableView;
+@property(nonatomic, strong) NSArray *commonQuantites;
+@property(nonatomic, strong) NSArray *commonUnits;
 
 @end
 
@@ -36,9 +42,80 @@
   self.categoryPicker.delegate = self;
   self.categoryPicker.dataSource = self;
 
+  if (self.shoppingItem) {
+    self.nameTextField.text = [self.shoppingItem valueForKey:@"itemName"];
+    //    self.quantityTextField.text = [self.shoppingItem
+    //    valueForKey:@"quantity"];
+    self.unitTextField.text = [self.shoppingItem valueForKey:@"unit"];
+  }
+
   [self.categoryPicker selectRow:self.pickerData.count - 1
                      inComponent:0
                         animated:YES];
+
+  AppDelegate *appDelegate =
+      (AppDelegate *)[UIApplication sharedApplication].delegate;
+
+  self.context = appDelegate.managedObjectContext;
+
+  NSFetchRequest *fetchRequest =
+      [[NSFetchRequest alloc] initWithEntityName:@"ShoppingItem"];
+
+  NSError *error = nil;
+
+  NSArray *resultsArray =
+      [self.context executeFetchRequest:fetchRequest error:&error];
+
+  if (!error) {
+    NSMutableDictionary *quantitiesDictionary =
+        [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *unitsDictionary = [[NSMutableDictionary alloc] init];
+
+    for (NSManagedObject *shoppingItem in resultsArray) {
+      if ([quantitiesDictionary
+              objectForKey:[shoppingItem valueForKey:@"quantity"]]) {
+        NSInteger commonQuantityCounter = [[quantitiesDictionary
+            objectForKey:[shoppingItem valueForKey:@"quantity"]] integerValue];
+        commonQuantityCounter++;
+        [quantitiesDictionary
+            setObject:[NSNumber numberWithInteger:commonQuantityCounter]
+               forKey:[shoppingItem valueForKey:@"quantity"]];
+      } else {
+        [quantitiesDictionary setObject:@(1)
+                                 forKey:[shoppingItem valueForKey:@"quantity"]];
+      }
+
+      if ([unitsDictionary objectForKey:[shoppingItem valueForKey:@"unit"]]) {
+        NSInteger commonQuantityCounter = [[unitsDictionary
+            objectForKey:[shoppingItem valueForKey:@"unit"]] integerValue];
+        commonQuantityCounter++;
+        [unitsDictionary
+            setObject:[NSNumber numberWithInteger:commonQuantityCounter]
+               forKey:[shoppingItem valueForKey:@"unit"]];
+      } else {
+        [unitsDictionary setObject:@(1)
+                            forKey:[shoppingItem valueForKey:@"unit"]];
+      }
+    }
+
+    self.commonQuantites = [quantitiesDictionary
+        keysSortedByValueUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+          if ([obj1 integerValue] > [obj2 integerValue]) {
+            return NSOrderedAscending;
+          } else {
+            return NSOrderedDescending;
+          }
+        }];
+
+    self.commonUnits = [unitsDictionary
+        keysSortedByValueUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+          if ([obj1 integerValue] > [obj2 integerValue]) {
+            return NSOrderedAscending;
+          } else {
+            return NSOrderedDescending;
+          }
+        }];
+  }
 }
 
 - (void)didReceiveMemoryWarning
@@ -150,10 +227,52 @@ numberOfRowsInComponent:(NSInteger)component
 
 #pragma mark - table view
 
+- (void)tableView:(UITableView *)tableView
+    didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+  if (tableView == self.quantityTableView) {
+    self.quantityTextField.text =
+        [self.commonQuantites[indexPath.row] stringValue];
+
+    [self.quantityTableView deselectRowAtIndexPath:indexPath animated:YES];
+  } else {
+    self.unitTextField.text = self.commonUnits[indexPath.row];
+    [self.unitTableView deselectRowAtIndexPath:indexPath animated:YES];
+  }
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView
+         cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+  if (tableView == self.quantityTableView) {
+    CommonUnitCell *cell =
+        [tableView dequeueReusableCellWithIdentifier:@"CommonQuantity"];
+
+    cell.label.text = [self.commonQuantites[indexPath.row] stringValue];
+
+    return cell;
+  } else {
+    CommonUnitCell *cell =
+        [tableView dequeueReusableCellWithIdentifier:@"CommonUnit"];
+    cell.label.text = self.commonUnits[indexPath.row];
+
+    return cell;
+  }
+}
+
 - (NSInteger)tableView:(UITableView *)tableView
  numberOfRowsInSection:(NSInteger)section
 {
-  return 0;
+  if (tableView == self.quantityTableView) {
+    return self.commonQuantites.count;
+  } else {
+    return self.commonUnits.count;
+  }
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+  return 1;
 }
 
 @end

@@ -11,7 +11,6 @@
 
 @interface AddShoppingItemViewController
     : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource,
-                        NSFetchedResultsControllerDelegate,
                         UITableViewDataSource, UITableViewDelegate>
 
 @property(weak, nonatomic) IBOutlet UITextField *nameTextField;
@@ -19,5 +18,7 @@
 @property(weak, nonatomic) IBOutlet UITextField *unitTextField;
 @property(weak, nonatomic) IBOutlet UITableView *commonUnitsTableView;
 @property(weak, nonatomic) IBOutlet UIPickerView *categoryPicker;
+
+@property(strong, nonatomic) NSManagedObject *shoppingItem;
 
 @end

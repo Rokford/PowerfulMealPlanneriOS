@@ -9,6 +9,7 @@
 #import "ShoppingListViewController.h"
 #import "AppDelegate.h"
 #import "PMPTableViewCell.h"
+#import "AddShoppingItemViewController.h"
 
 @interface ShoppingListViewController ()
 
@@ -86,6 +87,21 @@
   [self configureCell:cell atIndexPath:indexPath];
 
   return cell;
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+  if ([segue.identifier isEqualToString:@"showShoppingItem"]) {
+
+    AddShoppingItemViewController *controller =
+        (AddShoppingItemViewController *)[segue destinationViewController];
+
+    NSIndexPath *path = [self.tableView indexPathForSelectedRow];
+    NSManagedObject *object =
+        [self.fetchedResultsController objectAtIndexPath:path];
+
+    controller.shoppingItem = object;
+  }
 }
 
 - (void)configureCell:(UITableViewCell *)cell

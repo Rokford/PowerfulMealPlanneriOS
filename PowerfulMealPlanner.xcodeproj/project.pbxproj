@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C90A34121B8765D100F111C7 /* CommonUnitCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C90A34111B8765D100F111C7 /* CommonUnitCell.m */; };
 		C95A6FEA1B7C850900D165D3 /* PMPTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C95A6FE91B7C850900D165D3 /* PMPTableViewCell.m */; };
 		C96888BB1B7B863400610097 /* AddShoppingItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C96888BA1B7B863400610097 /* AddShoppingItemViewController.m */; };
 		C969B0631B78963900679069 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C969B0621B78963900679069 /* main.m */; };
@@ -30,6 +31,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C90A34101B8765D100F111C7 /* CommonUnitCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonUnitCell.h; sourceTree = "<group>"; };
+		C90A34111B8765D100F111C7 /* CommonUnitCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonUnitCell.m; sourceTree = "<group>"; };
 		C95A6FE81B7C850900D165D3 /* PMPTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMPTableViewCell.h; sourceTree = "<group>"; };
 		C95A6FE91B7C850900D165D3 /* PMPTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMPTableViewCell.m; sourceTree = "<group>"; };
 		C96888B91B7B863400610097 /* AddShoppingItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddShoppingItemViewController.h; sourceTree = "<group>"; };
@@ -103,6 +106,8 @@
 				C969B0721B78963900679069 /* LaunchScreen.xib */,
 				C969B0671B78963900679069 /* PowerfulMealPlanner.xcdatamodeld */,
 				C969B0601B78963900679069 /* Supporting Files */,
+				C90A34101B8765D100F111C7 /* CommonUnitCell.h */,
+				C90A34111B8765D100F111C7 /* CommonUnitCell.m */,
 			);
 			path = PowerfulMealPlanner;
 			sourceTree = "<group>";
@@ -237,6 +242,7 @@
 				C969B0661B78963900679069 /* AppDelegate.m in Sources */,
 				C969B06C1B78963900679069 /* ShoppingListViewController.m in Sources */,
 				C969B0631B78963900679069 /* main.m in Sources */,
+				C90A34121B8765D100F111C7 /* CommonUnitCell.m in Sources */,
 				C95A6FEA1B7C850900D165D3 /* PMPTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

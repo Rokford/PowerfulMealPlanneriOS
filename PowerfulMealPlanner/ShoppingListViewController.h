@@ -14,5 +14,6 @@
                              NSFetchedResultsControllerDelegate>
 
 @property(strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+@property(weak, nonatomic) IBOutlet UISwitch *listSwitch;
 
 @end
