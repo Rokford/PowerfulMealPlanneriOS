@@ -34,5 +34,14 @@
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
+	<key>Item categories</key>
+	<array>
+		<string>Meat &amp; fish</string>
+		<string>Dairy &amp; bread</string>
+		<string>Fruits &amp; vegetables</string>
+		<string>Cereals &amp; spices</string>
+		<string>Tinned &amp; frozen</string>
+		<string>Other</string>
+	</array>
 </dict>
 </plist>

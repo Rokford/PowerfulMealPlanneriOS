@@ -20,5 +20,6 @@
 @property(weak, nonatomic) IBOutlet UIPickerView *categoryPicker;
 
 @property(strong, nonatomic) NSManagedObject *shoppingItem;
+@property(assign, nonatomic) BOOL editingExisting;
 
 @end

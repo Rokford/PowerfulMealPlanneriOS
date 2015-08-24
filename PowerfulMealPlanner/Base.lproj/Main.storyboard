@@ -44,6 +44,9 @@
                                         <segment title="" image="TinnedFrozen"/>
                                         <segment title="" image="Other"/>
                                     </segments>
+                                    <connections>
+                                        <action selector="segmentSelected:" destination="Saz-3j-pi2" eventType="valueChanged" id="UYq-UV-sZb"/>
+                                    </connections>
                                 </segmentedControl>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -118,6 +121,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="listSwitch" destination="ady-cF-Ozr" id="rQp-dv-lBS"/>
+                        <outlet property="segmentedControlOutlet" destination="Lct-lC-7eK" id="Wmh-Xg-9aL"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oGN-JY-4uh" userLabel="First Responder" sceneMemberID="firstResponder"/>

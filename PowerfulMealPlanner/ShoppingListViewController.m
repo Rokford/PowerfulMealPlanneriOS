@@ -15,6 +15,8 @@
 
 @property(strong, nonatomic)
     NSFetchedResultsController *fetchedResultsController;
+@property(weak, nonatomic) IBOutlet UISegmentedControl *segmentedControlOutlet;
+@property(strong, nonatomic) NSArray *itemCategories;
 
 @end
 
@@ -23,6 +25,12 @@
 - (void)viewDidLoad
 {
   [super viewDidLoad];
+
+  NSDictionary *dictionary =
+      [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle]
+                                                     pathForResource:@"Info"
+                                                              ofType:@"plist"]];
+  self.itemCategories = [dictionary objectForKey:@"Item categories"];
 
   AppDelegate *appDelegate =
       (AppDelegate *)[UIApplication sharedApplication].delegate;
@@ -101,6 +109,7 @@
         [self.fetchedResultsController objectAtIndexPath:path];
 
     controller.shoppingItem = object;
+    controller.editingExisting = YES;
   }
 }
 
@@ -165,6 +174,43 @@
     break;
   }
   }
+}
+
+#pragma mark - segmented control
+
+- (IBAction)segmentSelected:(UISegmentedControl *)sender
+{
+  NSFetchRequest *fetchRequest =
+      [[NSFetchRequest alloc] initWithEntityName:@"ShoppingItem"];
+
+  NSString *category = self.itemCategories[sender.selectedSegmentIndex];
+
+  NSPredicate *predicate =
+      [NSPredicate predicateWithFormat:@"%K == %@", @"category", category];
+
+  [fetchRequest setPredicate:predicate];
+
+  [fetchRequest setSortDescriptors:@[
+    [NSSortDescriptor sortDescriptorWithKey:@"itemName" ascending:YES]
+  ]];
+
+  self.fetchedResultsController = [[NSFetchedResultsController alloc]
+      initWithFetchRequest:fetchRequest
+      managedObjectContext:self.managedObjectContext
+        sectionNameKeyPath:nil
+                 cacheName:nil];
+
+  [self.fetchedResultsController setDelegate:self];
+
+  NSError *error = nil;
+  [self.fetchedResultsController performFetch:&error];
+
+  if (error) {
+    NSLog(@"Unable to perform fetch.");
+    NSLog(@"%@, %@", error, error.localizedDescription);
+  }
+
+  [self.tableView reloadData];
 }
 
 @end

@@ -30,28 +30,31 @@
 {
   [super viewDidLoad];
 
-  self.pickerData = @[
-    @"Meat & fish",
-    @"Dairy & bread",
-    @"Fruits & vegetables",
-    @"Cereals & spices",
-    @"Tinned & frozen",
-    @"Other"
-  ];
+  NSDictionary *dictionary =
+      [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle]
+                                                     pathForResource:@"Info"
+                                                              ofType:@"plist"]];
+  self.pickerData = [dictionary objectForKey:@"Item categories"];
 
   self.categoryPicker.delegate = self;
   self.categoryPicker.dataSource = self;
 
   if (self.shoppingItem) {
     self.nameTextField.text = [self.shoppingItem valueForKey:@"itemName"];
-    //    self.quantityTextField.text = [self.shoppingItem
-    //    valueForKey:@"quantity"];
+    self.quantityTextField.text =
+        [[self.shoppingItem valueForKey:@"quantity"] stringValue];
     self.unitTextField.text = [self.shoppingItem valueForKey:@"unit"];
-  }
+    [self.categoryPicker
+          selectRow:[self.pickerData indexOfObject:[self.shoppingItem
+                                                       valueForKey:@"category"]]
+        inComponent:0
+           animated:YES];
+  } else {
 
-  [self.categoryPicker selectRow:self.pickerData.count - 1
-                     inComponent:0
-                        animated:YES];
+    [self.categoryPicker selectRow:self.pickerData.count - 1
+                       inComponent:0
+                          animated:YES];
+  }
 
   AppDelegate *appDelegate =
       (AppDelegate *)[UIApplication sharedApplication].delegate;
@@ -156,50 +159,67 @@ preparation before navigation
 
     self.context = appDelegate.managedObjectContext;
 
-    NSEntityDescription *entityDescription =
-        [NSEntityDescription entityForName:@"ShoppingItem"
-                    inManagedObjectContext:self.context];
-
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    [fetchRequest setEntity:entityDescription];
-
     NSError *error = nil;
 
-    NSPredicate *predicate =
-        [NSPredicate predicateWithFormat:@"%K == %@ AND %K == %@", @"itemName",
-                                         itemName, @"unit", itemUnit];
-    [fetchRequest setPredicate:predicate];
+    if (self.editingExisting) {
+      [self.shoppingItem setValue:@(itemQuantity) forKey:@"quantity"];
+      [self.shoppingItem setValue:itemUnit forKey:@"unit"];
+      [self.shoppingItem setValue:itemName forKey:@"itemName"];
+      [self.shoppingItem setValue:category forKey:@"category"];
 
-    NSArray *resultsArray =
-        [self.context executeFetchRequest:fetchRequest error:&error];
-
-    if (!error && resultsArray.count > 0) {
-      // there alread is such item
-      NSManagedObject *item = resultsArray[0];
-
-      CGFloat quantity = [[item valueForKey:@"quantity"] floatValue];
-      quantity += itemQuantity;
-
-      [item setValue:@(quantity) forKey:@"quantity"];
-
-      if (![item.managedObjectContext save:&error]) {
+      if (![self.shoppingItem.managedObjectContext save:&error]) {
         NSLog(@"Unable to save managed object context.");
         NSLog(@"%@, %@", error, error.localizedDescription);
       }
     } else {
-      // crate new item
-      NSManagedObject *item =
-          [[NSManagedObject alloc] initWithEntity:entityDescription
-                   insertIntoManagedObjectContext:self.context];
 
-      [item setValue:itemName forKey:@"itemName"];
-      [item setValue:@(itemQuantity) forKey:@"quantity"];
-      [item setValue:itemUnit forKey:@"unit"];
-      [item setValue:category forKey:@"category"];
+      NSEntityDescription *entityDescription =
+          [NSEntityDescription entityForName:@"ShoppingItem"
+                      inManagedObjectContext:self.context];
 
-      if (![item.managedObjectContext save:&error]) {
-        NSLog(@"Unable to save managed object context.");
-        NSLog(@"%@, %@", error, error.localizedDescription);
+      NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+      [fetchRequest setEntity:entityDescription];
+
+      NSPredicate *predicate = [NSPredicate
+          predicateWithFormat:@"%K == %@ AND %K == %@", @"itemName", itemName,
+                              @"unit", itemUnit];
+      [fetchRequest setPredicate:predicate];
+
+      NSArray *resultsArray =
+          [self.context executeFetchRequest:fetchRequest error:&error];
+
+      if (!error && resultsArray.count > 0) {
+        // there alread is such item
+        NSManagedObject *item = resultsArray[0];
+
+        CGFloat quantity = [[item valueForKey:@"quantity"] floatValue];
+        quantity += itemQuantity;
+
+        [item setValue:@(quantity) forKey:@"quantity"];
+
+        [item setValue:itemUnit forKey:@"unit"];
+        [item setValue:itemName forKey:@"itemName"];
+        [item setValue:category forKey:@"category"];
+
+        if (![item.managedObjectContext save:&error]) {
+          NSLog(@"Unable to save managed object context.");
+          NSLog(@"%@, %@", error, error.localizedDescription);
+        }
+      } else {
+        // crate new item
+        NSManagedObject *item =
+            [[NSManagedObject alloc] initWithEntity:entityDescription
+                     insertIntoManagedObjectContext:self.context];
+
+        [item setValue:itemName forKey:@"itemName"];
+        [item setValue:@(itemQuantity) forKey:@"quantity"];
+        [item setValue:itemUnit forKey:@"unit"];
+        [item setValue:category forKey:@"category"];
+
+        if (![item.managedObjectContext save:&error]) {
+          NSLog(@"Unable to save managed object context.");
+          NSLog(@"%@, %@", error, error.localizedDescription);
+        }
       }
     }
 
