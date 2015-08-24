@@ -44,7 +44,8 @@
 - (void)reloadTableForSelectedSegment:(NSInteger)index
 {
   NSFetchRequest *fetchRequest =
-      [[NSFetchRequest alloc] initWithEntityName:@"ShoppingItem"];
+      self.fetchedResultsController.fetchRequest
+          ?: [[NSFetchRequest alloc] initWithEntityName:@"ShoppingItem"];
 
   NSString *category = self.itemCategories[index];
 
@@ -64,13 +65,15 @@
       [NSSortDescriptor sortDescriptorWithKey:@"itemName" ascending:YES]
     ]];
 
-  self.fetchedResultsController = [[NSFetchedResultsController alloc]
-      initWithFetchRequest:fetchRequest
-      managedObjectContext:self.managedObjectContext
-        sectionNameKeyPath:nil
-                 cacheName:nil];
+  if (!self.fetchedResultsController) {
+    self.fetchedResultsController = [[NSFetchedResultsController alloc]
+        initWithFetchRequest:fetchRequest
+        managedObjectContext:self.managedObjectContext
+          sectionNameKeyPath:nil
+                   cacheName:nil];
 
-  [self.fetchedResultsController setDelegate:self];
+    [self.fetchedResultsController setDelegate:self];
+  }
 
   NSError *error = nil;
   [self.fetchedResultsController performFetch:&error];
@@ -138,12 +141,9 @@
 - (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier
                                   sender:(id)sender
 {
-  if ([identifier isEqualToString:@"showShoppingItem"]) {
-    if (self.listSwitch.isOn)
-      return NO;
-    else
-      return YES;
-  } else
+  if ([identifier isEqualToString:@"showShoppingItem"] && self.listSwitch.isOn)
+    return NO;
+  else
     return YES;
 }
 
@@ -160,7 +160,7 @@
 
     NSError *error = nil;
 
-    //    [item.managedObjectContext save:&error];
+    [item.managedObjectContext save:&error];
 
     [self reloadTableForSelectedSegment:self.segmentedControlOutlet
                                             .selectedSegmentIndex];
