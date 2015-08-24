@@ -286,6 +286,28 @@
   }
 }
 
+- (BOOL)tableView:(UITableView *)tableView
+    canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+  // Return NO if you do not want the specified item to be editable.
+  return YES;
+}
+
+- (void)tableView:(UITableView *)tableView
+    commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
+     forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+  if (editingStyle == UITableViewCellEditingStyleDelete) {
+
+    NSManagedObject *record =
+        [self.fetchedResultsController objectAtIndexPath:indexPath];
+
+    if (record) {
+      [self.fetchedResultsController.managedObjectContext deleteObject:record];
+    }
+  }
+}
+
 #pragma mark - segmented control
 
 - (IBAction)segmentSelected:(UISegmentedControl *)sender
