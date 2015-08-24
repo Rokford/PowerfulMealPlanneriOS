@@ -37,12 +37,32 @@
 
   self.managedObjectContext = appDelegate.managedObjectContext;
 
+  [self reloadTableForSelectedSegment:self.segmentedControlOutlet
+                                          .selectedSegmentIndex];
+}
+
+- (void)reloadTableForSelectedSegment:(NSInteger)index
+{
   NSFetchRequest *fetchRequest =
       [[NSFetchRequest alloc] initWithEntityName:@"ShoppingItem"];
 
-  [fetchRequest setSortDescriptors:@[
-    [NSSortDescriptor sortDescriptorWithKey:@"itemName" ascending:YES]
-  ]];
+  NSString *category = self.itemCategories[index];
+
+  NSPredicate *predicate =
+      [NSPredicate predicateWithFormat:@"%K == %@", @"category", category];
+
+  [fetchRequest setPredicate:predicate];
+
+  if (self.listSwitch.isOn)
+    [fetchRequest setSortDescriptors:@[
+      [NSSortDescriptor sortDescriptorWithKey:@"isChecked" ascending:YES],
+
+      [NSSortDescriptor sortDescriptorWithKey:@"itemName" ascending:YES]
+    ]];
+  else
+    [fetchRequest setSortDescriptors:@[
+      [NSSortDescriptor sortDescriptorWithKey:@"itemName" ascending:YES]
+    ]];
 
   self.fetchedResultsController = [[NSFetchedResultsController alloc]
       initWithFetchRequest:fetchRequest
@@ -59,6 +79,8 @@
     NSLog(@"Unable to perform fetch.");
     NSLog(@"%@, %@", error, error.localizedDescription);
   }
+
+  [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning
@@ -113,6 +135,38 @@
   }
 }
 
+- (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier
+                                  sender:(id)sender
+{
+  if ([identifier isEqualToString:@"showShoppingItem"]) {
+    if (self.listSwitch.isOn)
+      return NO;
+    else
+      return YES;
+  } else
+    return YES;
+}
+
+- (void)tableView:(UITableView *)tableView
+    didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+  if (self.listSwitch.isOn) {
+    // Fetch Record
+    NSManagedObject *item =
+        [self.fetchedResultsController objectAtIndexPath:indexPath];
+
+    [item setValue:@(![[item valueForKey:@"isChecked"] boolValue])
+            forKey:@"isChecked"];
+
+    NSError *error = nil;
+
+    //    [item.managedObjectContext save:&error];
+
+    [self reloadTableForSelectedSegment:self.segmentedControlOutlet
+                                            .selectedSegmentIndex];
+  }
+}
+
 - (void)configureCell:(UITableViewCell *)cell
           atIndexPath:(NSIndexPath *)indexPath
 {
@@ -127,6 +181,16 @@
   [PMPCell.itemQuantityLabel
       setText:[[item valueForKey:@"quantity"] stringValue]];
   [PMPCell.itemUnitLabel setText:[item valueForKey:@"unit"]];
+
+  if (self.listSwitch.isOn && [[item valueForKey:@"isChecked"] boolValue]) {
+    PMPCell.itemNameLabel.textColor = [UIColor grayColor];
+    PMPCell.itemQuantityLabel.textColor = [UIColor grayColor];
+    PMPCell.itemUnitLabel.textColor = [UIColor grayColor];
+  } else {
+    PMPCell.itemNameLabel.textColor = [UIColor blackColor];
+    PMPCell.itemQuantityLabel.textColor = [UIColor blackColor];
+    PMPCell.itemUnitLabel.textColor = [UIColor blackColor];
+  }
 }
 
 #pragma mark - fetched controller delegate
@@ -176,41 +240,51 @@
   }
 }
 
+#pragma mark - shopping list switch
+
+- (IBAction)shoppingListSwitchSwitched:(UISwitch *)sender
+{
+  if (sender.isOn) {
+    [self.segmentedControlOutlet setEnabled:YES];
+
+    [self reloadTableForSelectedSegment:self.segmentedControlOutlet
+                                            .selectedSegmentIndex];
+  } else {
+
+    [self.segmentedControlOutlet setEnabled:NO];
+
+    NSFetchRequest *fetchRequest =
+        [[NSFetchRequest alloc] initWithEntityName:@"ShoppingItem"];
+
+    [fetchRequest setSortDescriptors:@[
+      [NSSortDescriptor sortDescriptorWithKey:@"itemName" ascending:YES]
+    ]];
+
+    self.fetchedResultsController = [[NSFetchedResultsController alloc]
+        initWithFetchRequest:fetchRequest
+        managedObjectContext:self.managedObjectContext
+          sectionNameKeyPath:nil
+                   cacheName:nil];
+
+    [self.fetchedResultsController setDelegate:self];
+
+    NSError *error = nil;
+    [self.fetchedResultsController performFetch:&error];
+
+    if (error) {
+      NSLog(@"Unable to perform fetch.");
+      NSLog(@"%@, %@", error, error.localizedDescription);
+    }
+
+    [self.tableView reloadData];
+  }
+}
+
 #pragma mark - segmented control
 
 - (IBAction)segmentSelected:(UISegmentedControl *)sender
 {
-  NSFetchRequest *fetchRequest =
-      [[NSFetchRequest alloc] initWithEntityName:@"ShoppingItem"];
-
-  NSString *category = self.itemCategories[sender.selectedSegmentIndex];
-
-  NSPredicate *predicate =
-      [NSPredicate predicateWithFormat:@"%K == %@", @"category", category];
-
-  [fetchRequest setPredicate:predicate];
-
-  [fetchRequest setSortDescriptors:@[
-    [NSSortDescriptor sortDescriptorWithKey:@"itemName" ascending:YES]
-  ]];
-
-  self.fetchedResultsController = [[NSFetchedResultsController alloc]
-      initWithFetchRequest:fetchRequest
-      managedObjectContext:self.managedObjectContext
-        sectionNameKeyPath:nil
-                 cacheName:nil];
-
-  [self.fetchedResultsController setDelegate:self];
-
-  NSError *error = nil;
-  [self.fetchedResultsController performFetch:&error];
-
-  if (error) {
-    NSLog(@"Unable to perform fetch.");
-    NSLog(@"%@, %@", error, error.localizedDescription);
-  }
-
-  [self.tableView reloadData];
+  [self reloadTableForSelectedSegment:sender.selectedSegmentIndex];
 }
 
 @end

@@ -15,5 +15,6 @@
 
 @property(strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property(weak, nonatomic) IBOutlet UISwitch *listSwitch;
+@property (weak, nonatomic) IBOutlet UIView *segmentControlView;
 
 @end
