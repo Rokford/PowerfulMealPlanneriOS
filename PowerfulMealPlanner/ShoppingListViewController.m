@@ -46,7 +46,6 @@
   NSFetchRequest *fetchRequest =
       self.fetchedResultsController.fetchRequest
           ?: [[NSFetchRequest alloc] initWithEntityName:@"ShoppingItem"];
-
   NSString *category = self.itemCategories[index];
 
   NSPredicate *predicate =
@@ -158,9 +157,8 @@
     [item setValue:@(![[item valueForKey:@"isChecked"] boolValue])
             forKey:@"isChecked"];
 
-    NSError *error = nil;
-
-    [item.managedObjectContext save:&error];
+    //    NSError *error = nil;
+    //    [item.managedObjectContext save:&error];
 
     [self reloadTableForSelectedSegment:self.segmentedControlOutlet
                                             .selectedSegmentIndex];
@@ -247,11 +245,19 @@
   if (sender.isOn) {
     [self.segmentedControlOutlet setEnabled:YES];
 
+    if (self.segmentedControlOutlet.selectedSegmentIndex ==
+        UISegmentedControlNoSegment) {
+      [self.segmentedControlOutlet setSelectedSegmentIndex:0];
+    }
+
     [self reloadTableForSelectedSegment:self.segmentedControlOutlet
                                             .selectedSegmentIndex];
   } else {
 
     [self.segmentedControlOutlet setEnabled:NO];
+
+    [self.segmentedControlOutlet
+        setSelectedSegmentIndex:UISegmentedControlNoSegment];
 
     NSFetchRequest *fetchRequest =
         [[NSFetchRequest alloc] initWithEntityName:@"ShoppingItem"];
