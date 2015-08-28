@@ -4,22 +4,28 @@
         <attribute name="date" attributeType="Date" syncable="YES"/>
         <relationship name="recipes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Recipe" inverseName="days" inverseEntity="Recipe" syncable="YES"/>
     </entity>
-    <entity name="Recipe" syncable="YES">
-        <attribute name="recipeName" attributeType="String" syncable="YES"/>
-        <relationship name="days" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Day" inverseName="recipes" inverseEntity="Day" syncable="YES"/>
-        <relationship name="shoppingItems" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ShoppingItem" inverseName="recipe" inverseEntity="ShoppingItem" syncable="YES"/>
+    <entity name="Ingredient" parentEntity="Item" syncable="YES">
+        <relationship name="recipe" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Recipe" inverseName="ingredients" inverseEntity="Recipe" syncable="YES"/>
     </entity>
-    <entity name="ShoppingItem" syncable="YES">
+    <entity name="Item" isAbstract="YES" syncable="YES">
         <attribute name="category" attributeType="String" defaultValueString="other" syncable="YES"/>
-        <attribute name="isChecked" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
         <attribute name="itemName" attributeType="String" syncable="YES"/>
         <attribute name="quantity" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <attribute name="unit" attributeType="String" syncable="YES"/>
-        <relationship name="recipe" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Recipe" inverseName="shoppingItems" inverseEntity="Recipe" syncable="YES"/>
+    </entity>
+    <entity name="Recipe" syncable="YES">
+        <attribute name="recipeName" attributeType="String" syncable="YES"/>
+        <relationship name="days" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Day" inverseName="recipes" inverseEntity="Day" syncable="YES"/>
+        <relationship name="ingredients" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Ingredient" inverseName="recipe" inverseEntity="Ingredient" syncable="YES"/>
+    </entity>
+    <entity name="ShoppingItem" parentEntity="Item" syncable="YES">
+        <attribute name="isChecked" optional="YES" attributeType="Boolean" syncable="YES"/>
     </entity>
     <elements>
         <element name="Day" positionX="-36" positionY="54" width="128" height="75"/>
+        <element name="Item" positionX="-63" positionY="-18" width="128" height="105"/>
         <element name="Recipe" positionX="-54" positionY="27" width="128" height="90"/>
-        <element name="ShoppingItem" positionX="-63" positionY="-18" width="128" height="135"/>
+        <element name="ShoppingItem" positionX="-54" positionY="45" width="128" height="60"/>
+        <element name="Ingredient" positionX="-54" positionY="45" width="128" height="60"/>
     </elements>
 </model>

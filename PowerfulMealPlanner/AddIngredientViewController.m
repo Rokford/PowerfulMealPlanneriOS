@@ -1,28 +1,26 @@
 //
-//  AddShoppingItemViewController.m
+//  AddIngredientViewController.m
 //  PowerfulMealPlanner
 //
-//  Created by PLGRIZW on 12.08.2015.
+//  Created by PLGRIZW on 26.08.2015.
 //  Copyright (c) 2015 Mobinaut. All rights reserved.
 //
 
-#import "AddShoppingItemViewController.h"
+#import "AddIngredientViewController.h"
 #import "AppDelegate.h"
 #import "CommonUnitCell.h"
 
-@interface AddShoppingItemViewController ()
+@interface AddIngredientViewController ()
 
 @property(nonatomic, strong) NSArray *pickerData;
 @property(nonatomic, strong) NSManagedObjectContext *context;
 
-@property(weak, nonatomic) IBOutlet UITableView *quantityTableView;
-@property(weak, nonatomic) IBOutlet UITableView *unitTableView;
 @property(nonatomic, strong) NSArray *commonQuantites;
 @property(nonatomic, strong) NSArray *commonUnits;
 
 @end
 
-@implementation AddShoppingItemViewController
+@implementation AddIngredientViewController
 
 - (void)viewDidLoad
 {
@@ -34,24 +32,24 @@
                                                               ofType:@"plist"]];
   self.pickerData = [dictionary objectForKey:@"Item categories"];
 
-  self.categoryPicker.delegate = self;
-  self.categoryPicker.dataSource = self;
+  self.picker.delegate = self;
+  self.picker.dataSource = self;
 
   if (self.shoppingItem) {
     self.nameTextField.text = [self.shoppingItem valueForKey:@"itemName"];
     self.quantityTextField.text =
         [[self.shoppingItem valueForKey:@"quantity"] stringValue];
     self.unitTextField.text = [self.shoppingItem valueForKey:@"unit"];
-    [self.categoryPicker
+    [self.picker
           selectRow:[self.pickerData indexOfObject:[self.shoppingItem
                                                        valueForKey:@"category"]]
         inComponent:0
            animated:YES];
   } else {
 
-    [self.categoryPicker selectRow:self.pickerData.count - 1
-                       inComponent:0
-                          animated:YES];
+    [self.picker selectRow:self.pickerData.count - 1
+               inComponent:0
+                  animated:YES];
   }
 
   AppDelegate *appDelegate =
@@ -60,7 +58,7 @@
   self.context = appDelegate.managedObjectContext;
 
   NSFetchRequest *fetchRequest =
-      [[NSFetchRequest alloc] initWithEntityName:@"ShoppingItem"];
+      [[NSFetchRequest alloc] initWithEntityName:@"Ingredient"];
 
   NSError *error = nil;
 
@@ -138,8 +136,8 @@
   NSString *itemName = self.nameTextField.text;
   CGFloat itemQuantity = (CGFloat)[self.quantityTextField.text floatValue];
   NSString *itemUnit = self.unitTextField.text;
-  NSString *category = [self.pickerData
-      objectAtIndex:[self.categoryPicker selectedRowInComponent:0]];
+  NSString *category =
+      [self.pickerData objectAtIndex:[self.picker selectedRowInComponent:0]];
 
   if (![itemName length] || itemQuantity == 0 || ![itemUnit length]) {
     [[[UIAlertView alloc]
@@ -169,15 +167,17 @@
     } else {
 
       NSEntityDescription *entityDescription =
-          [NSEntityDescription entityForName:@"ShoppingItem"
+          [NSEntityDescription entityForName:@"Ingredient"
                       inManagedObjectContext:self.context];
 
       NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
       [fetchRequest setEntity:entityDescription];
 
-      NSPredicate *predicate = [NSPredicate
-          predicateWithFormat:@"%K == %@ AND %K == %@", @"itemName", itemName,
-                              @"unit", itemUnit];
+      NSPredicate *predicate =
+          [NSPredicate predicateWithFormat:
+                           @"%K == %@ AND %K == %@ AND recipe.recipeName == %@",
+                           @"itemName", itemName, @"unit", itemUnit,
+                           [self.recipe valueForKey:@"recipeName"]];
       [fetchRequest setPredicate:predicate];
 
       NSArray *resultsArray =
@@ -210,6 +210,11 @@
         [item setValue:@(itemQuantity) forKey:@"quantity"];
         [item setValue:itemUnit forKey:@"unit"];
         [item setValue:category forKey:@"category"];
+
+        //        [self.recipe setValue:[NSSet setWithObject:item]
+        //        forKey:@"ingredients"];
+
+        [item setValue:self.recipe forKey:@"recipe"];
 
         if (![item.managedObjectContext save:&error]) {
           NSLog(@"Unable to save managed object context.");

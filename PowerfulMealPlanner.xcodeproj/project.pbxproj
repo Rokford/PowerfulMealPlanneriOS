@@ -18,6 +18,9 @@
 		C969B0711B78963900679069 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C969B0701B78963900679069 /* Images.xcassets */; };
 		C969B0741B78963900679069 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C969B0721B78963900679069 /* LaunchScreen.xib */; };
 		C969B0801B78963900679069 /* PowerfulMealPlannerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C969B07F1B78963900679069 /* PowerfulMealPlannerTests.m */; };
+		C9D6C9AD1B8DBD550053C5F3 /* RecipesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9D6C9AC1B8DBD550053C5F3 /* RecipesViewController.m */; };
+		C9D6C9B01B8DBD8E0053C5F3 /* AddRecipeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9D6C9AF1B8DBD8E0053C5F3 /* AddRecipeViewController.m */; };
+		C9D6C9B31B8DFBD30053C5F3 /* AddIngredientViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9D6C9B21B8DFBD30053C5F3 /* AddIngredientViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +40,7 @@
 		C95A6FE91B7C850900D165D3 /* PMPTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMPTableViewCell.m; sourceTree = "<group>"; };
 		C96888B91B7B863400610097 /* AddShoppingItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddShoppingItemViewController.h; sourceTree = "<group>"; };
 		C96888BA1B7B863400610097 /* AddShoppingItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddShoppingItemViewController.m; sourceTree = "<group>"; };
-		C969B05D1B78963900679069 /* PowerfulMealPlanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PowerfulMealPlanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C969B05D1B78963900679069 /* Powerful Meal Planner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Powerful Meal Planner.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C969B0611B78963900679069 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C969B0621B78963900679069 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C969B0641B78963900679069 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -51,6 +54,12 @@
 		C969B0791B78963900679069 /* PowerfulMealPlannerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PowerfulMealPlannerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C969B07E1B78963900679069 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C969B07F1B78963900679069 /* PowerfulMealPlannerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PowerfulMealPlannerTests.m; sourceTree = "<group>"; };
+		C9D6C9AB1B8DBD550053C5F3 /* RecipesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RecipesViewController.h; path = ../RecipesViewController.h; sourceTree = "<group>"; };
+		C9D6C9AC1B8DBD550053C5F3 /* RecipesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RecipesViewController.m; path = ../RecipesViewController.m; sourceTree = "<group>"; };
+		C9D6C9AE1B8DBD8E0053C5F3 /* AddRecipeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddRecipeViewController.h; sourceTree = "<group>"; };
+		C9D6C9AF1B8DBD8E0053C5F3 /* AddRecipeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddRecipeViewController.m; sourceTree = "<group>"; };
+		C9D6C9B11B8DFBD30053C5F3 /* AddIngredientViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddIngredientViewController.h; sourceTree = "<group>"; };
+		C9D6C9B21B8DFBD30053C5F3 /* AddIngredientViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddIngredientViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,7 +92,7 @@
 		C969B05E1B78963900679069 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C969B05D1B78963900679069 /* PowerfulMealPlanner.app */,
+				C969B05D1B78963900679069 /* Powerful Meal Planner.app */,
 				C969B0791B78963900679069 /* PowerfulMealPlannerTests.xctest */,
 			);
 			name = Products;
@@ -98,6 +107,12 @@
 				C969B06B1B78963900679069 /* ShoppingListViewController.m */,
 				C96888B91B7B863400610097 /* AddShoppingItemViewController.h */,
 				C96888BA1B7B863400610097 /* AddShoppingItemViewController.m */,
+				C9D6C9AB1B8DBD550053C5F3 /* RecipesViewController.h */,
+				C9D6C9AC1B8DBD550053C5F3 /* RecipesViewController.m */,
+				C9D6C9AE1B8DBD8E0053C5F3 /* AddRecipeViewController.h */,
+				C9D6C9AF1B8DBD8E0053C5F3 /* AddRecipeViewController.m */,
+				C9D6C9B11B8DFBD30053C5F3 /* AddIngredientViewController.h */,
+				C9D6C9B21B8DFBD30053C5F3 /* AddIngredientViewController.m */,
 				C95A6FE81B7C850900D165D3 /* PMPTableViewCell.h */,
 				C95A6FE91B7C850900D165D3 /* PMPTableViewCell.m */,
 				C969B06D1B78963900679069 /* Main.storyboard */,
@@ -140,9 +155,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		C969B05C1B78963900679069 /* PowerfulMealPlanner */ = {
+		C969B05C1B78963900679069 /* Powerful Meal Planner */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C969B0831B78963900679069 /* Build configuration list for PBXNativeTarget "PowerfulMealPlanner" */;
+			buildConfigurationList = C969B0831B78963900679069 /* Build configuration list for PBXNativeTarget "Powerful Meal Planner" */;
 			buildPhases = (
 				C969B0591B78963900679069 /* Sources */,
 				C969B05A1B78963900679069 /* Frameworks */,
@@ -152,9 +167,9 @@
 			);
 			dependencies = (
 			);
-			name = PowerfulMealPlanner;
+			name = "Powerful Meal Planner";
 			productName = PowerfulMealPlanner;
-			productReference = C969B05D1B78963900679069 /* PowerfulMealPlanner.app */;
+			productReference = C969B05D1B78963900679069 /* Powerful Meal Planner.app */;
 			productType = "com.apple.product-type.application";
 		};
 		C969B0781B78963900679069 /* PowerfulMealPlannerTests */ = {
@@ -206,7 +221,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C969B05C1B78963900679069 /* PowerfulMealPlanner */,
+				C969B05C1B78963900679069 /* Powerful Meal Planner */,
 				C969B0781B78963900679069 /* PowerfulMealPlannerTests */,
 			);
 		};
@@ -239,9 +254,12 @@
 			files = (
 				C96888BB1B7B863400610097 /* AddShoppingItemViewController.m in Sources */,
 				C969B0691B78963900679069 /* PowerfulMealPlanner.xcdatamodeld in Sources */,
+				C9D6C9B01B8DBD8E0053C5F3 /* AddRecipeViewController.m in Sources */,
 				C969B0661B78963900679069 /* AppDelegate.m in Sources */,
 				C969B06C1B78963900679069 /* ShoppingListViewController.m in Sources */,
+				C9D6C9AD1B8DBD550053C5F3 /* RecipesViewController.m in Sources */,
 				C969B0631B78963900679069 /* main.m in Sources */,
+				C9D6C9B31B8DFBD30053C5F3 /* AddIngredientViewController.m in Sources */,
 				C90A34121B8765D100F111C7 /* CommonUnitCell.m in Sources */,
 				C95A6FEA1B7C850900D165D3 /* PMPTableViewCell.m in Sources */,
 			);
@@ -260,7 +278,7 @@
 /* Begin PBXTargetDependency section */
 		C969B07B1B78963900679069 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = C969B05C1B78963900679069 /* PowerfulMealPlanner */;
+			target = C969B05C1B78963900679069 /* Powerful Meal Planner */;
 			targetProxy = C969B07A1B78963900679069 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -431,7 +449,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C969B0831B78963900679069 /* Build configuration list for PBXNativeTarget "PowerfulMealPlanner" */ = {
+		C969B0831B78963900679069 /* Build configuration list for PBXNativeTarget "Powerful Meal Planner" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C969B0841B78963900679069 /* Debug */,
