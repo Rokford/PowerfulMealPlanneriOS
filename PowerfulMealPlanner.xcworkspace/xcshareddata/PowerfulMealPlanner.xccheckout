@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>99CB7DF2-303B-43E2-AB31-886E9D01DC89</string>
+	<key>IDESourceControlProjectName</key>
+	<string>PowerfulMealPlanner</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>F33AC18B6CA47B8A5BF0DF04CD8128ED81F0C95D</key>
+		<string>https://github.com/Rokford/PowerfulMealPlanneriOS.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>PowerfulMealPlanner.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>F33AC18B6CA47B8A5BF0DF04CD8128ED81F0C95D</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/Rokford/PowerfulMealPlanneriOS.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>F33AC18B6CA47B8A5BF0DF04CD8128ED81F0C95D</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>F33AC18B6CA47B8A5BF0DF04CD8128ED81F0C95D</string>
+			<key>IDESourceControlWCCName</key>
+			<string>PowerfulMealPlanner</string>
+		</dict>
+	</array>
+</dict>
+</plist>

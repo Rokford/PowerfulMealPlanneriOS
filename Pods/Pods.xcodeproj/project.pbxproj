@@ -1,0 +1,573 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		04123B10AA06D459598D8C0A /* FSCalendar.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F0BC33B498667EA6F27875B /* FSCalendar.m */; };
+		075E6805CFC0D2DE98240EF9 /* FSCalendarAppearance.m in Sources */ = {isa = PBXBuildFile; fileRef = 970CB62BDAF90D7B3AA6CF14 /* FSCalendarAppearance.m */; };
+		3391CEFFECCA582A749650CB /* Pods-Powerful Meal Planner-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FAF708D9A16E9C83D78FB9EC /* Pods-Powerful Meal Planner-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3A83F1D47BD6C978C6633838 /* FSCalendarHeaderTouchDeliver.m in Sources */ = {isa = PBXBuildFile; fileRef = D650FC99754B2FB2EF09D58D /* FSCalendarHeaderTouchDeliver.m */; };
+		3BB77538C6A7271525592685 /* FSCalendarAppearance.h in Headers */ = {isa = PBXBuildFile; fileRef = E4B4046C50ACAFB3DFE1DBA1 /* FSCalendarAppearance.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3F510748FB53D45136ADC2D9 /* FSCalendar.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B2627AA5BC2661661B229EF /* FSCalendar.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5DDF884E81BB4DBB9E2724E5 /* FSCalendarHeaderTouchDeliver.h in Headers */ = {isa = PBXBuildFile; fileRef = F82010D6C8B094C00796E399 /* FSCalendarHeaderTouchDeliver.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6021690F22360CD8F58592D0 /* NSDate+FSExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 64530977DF141D5E8476F256 /* NSDate+FSExtension.m */; };
+		61A1CB213223DD1B9235A1E5 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C277921FCBEE25F676AFB858 /* QuartzCore.framework */; };
+		72F1EA05809A50D35ACE749F /* FSCalendarHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A116AB1387AE896771FA662 /* FSCalendarHeader.m */; };
+		769ADAD8CBE8FC474FE89CC5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C29984A6251755BFA5784EF2 /* Foundation.framework */; };
+		7C31104B10E1E69E3C03A5CF /* FSCalendar+IBExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = A97CBCE1E5D08AAF1C2B69F4 /* FSCalendar+IBExtension.m */; };
+		8FA91236A2E55B5ADF80C3BF /* UIView+FSExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = 30E1EE944BCC625DA0019A26 /* UIView+FSExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		988E0DC20B5BC39A0C12AFA1 /* FSCalendarDynamicHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = BF4B190C0E3BCEF3F9AC2B63 /* FSCalendarDynamicHeader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9E815FA829A9039E0C344F1E /* Pods-Powerful Meal Planner-FSCalendar-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6DB5964C239B0E979E7F3286 /* Pods-Powerful Meal Planner-FSCalendar-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9FFF8ED5D6440E18EF993A19 /* FSCalendarCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 41841F6E50C170B7F6EEC6CC /* FSCalendarCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B70F80BA51BDFAFA38BB959F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C29984A6251755BFA5784EF2 /* Foundation.framework */; };
+		BEBE8FC16D4FDDF3D16AA243 /* Pods-Powerful Meal Planner-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C30F97C28DA370F153C123F5 /* Pods-Powerful Meal Planner-dummy.m */; };
+		C0CEADCA57A2B8183DF4624D /* NSDate+FSExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = 20E17B2DE00D0735F2E67A65 /* NSDate+FSExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C4ED3FF23CF5E092B543D538 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 420D97FA315FB72C8E9455DE /* UIKit.framework */; };
+		CC222A1C2CF8A1C22EE11B17 /* FSCalendarCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C5E6D2CF04C4DEA45232302 /* FSCalendarCell.m */; };
+		D2C8136CA35B210EA1E053DB /* UIView+FSExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = BF55BACAF32D479366CEF105 /* UIView+FSExtension.m */; };
+		D9DC7FF1397E607AB6143934 /* FSCalendarHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = 20FEDC278FBBDC9032293D67 /* FSCalendarHeader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E7B67D8DF462A8EDB24CD85C /* Pods-Powerful Meal Planner-FSCalendar-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DE15CDF273DD97353D2F0D8C /* Pods-Powerful Meal Planner-FSCalendar-dummy.m */; };
+		EC88745A2AC88F6B5A6FBA99 /* FSCalendar+IBExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = 25C07AB2B63DFEC7DD18BC1B /* FSCalendar+IBExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9ED1C7FD842E1921B8B66B16 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9CCED507A3D87F8A59B0CFFB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 77EAC7A3B004C6A13F33CFC7;
+			remoteInfo = "Pods-Powerful Meal Planner-FSCalendar";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0C7921E70602B443FFE8199A /* Pods-Powerful Meal Planner-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Powerful Meal Planner-acknowledgements.plist"; sourceTree = "<group>"; };
+		0D927E04FB6A1B5FB0EE1DB0 /* Pods-Powerful Meal Planner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Powerful Meal Planner.release.xcconfig"; sourceTree = "<group>"; };
+		0F57764074DF940F6D0EEB8E /* Pods-Powerful Meal Planner-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Powerful Meal Planner-resources.sh"; sourceTree = "<group>"; };
+		20E17B2DE00D0735F2E67A65 /* NSDate+FSExtension.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSDate+FSExtension.h"; path = "FSCalendar/NSDate+FSExtension.h"; sourceTree = "<group>"; };
+		20FEDC278FBBDC9032293D67 /* FSCalendarHeader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FSCalendarHeader.h; path = FSCalendar/FSCalendarHeader.h; sourceTree = "<group>"; };
+		25C07AB2B63DFEC7DD18BC1B /* FSCalendar+IBExtension.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "FSCalendar+IBExtension.h"; path = "FSCalendar/FSCalendar+IBExtension.h"; sourceTree = "<group>"; };
+		26CFCB9B5F1D7E7168383102 /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		2C5E6D2CF04C4DEA45232302 /* FSCalendarCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FSCalendarCell.m; path = FSCalendar/FSCalendarCell.m; sourceTree = "<group>"; };
+		30E1EE944BCC625DA0019A26 /* UIView+FSExtension.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+FSExtension.h"; path = "FSCalendar/UIView+FSExtension.h"; sourceTree = "<group>"; };
+		360558527D74F1C7DF96B1E7 /* Pods-Powerful Meal Planner-FSCalendar.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Powerful Meal Planner-FSCalendar.modulemap"; sourceTree = "<group>"; };
+		41841F6E50C170B7F6EEC6CC /* FSCalendarCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FSCalendarCell.h; path = FSCalendar/FSCalendarCell.h; sourceTree = "<group>"; };
+		420D97FA315FB72C8E9455DE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		4A8271D64641F0A3EF7863F7 /* Pods-Powerful Meal Planner-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Powerful Meal Planner-acknowledgements.markdown"; sourceTree = "<group>"; };
+		4D876C57CF3387D5AF5D06CD /* Pods-Powerful Meal Planner-FSCalendar-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Powerful Meal Planner-FSCalendar-prefix.pch"; sourceTree = "<group>"; };
+		5A116AB1387AE896771FA662 /* FSCalendarHeader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FSCalendarHeader.m; path = FSCalendar/FSCalendarHeader.m; sourceTree = "<group>"; };
+		64456D102492BF8A8F28456F /* Pods-Powerful Meal Planner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Powerful Meal Planner.debug.xcconfig"; sourceTree = "<group>"; };
+		64530977DF141D5E8476F256 /* NSDate+FSExtension.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSDate+FSExtension.m"; path = "FSCalendar/NSDate+FSExtension.m"; sourceTree = "<group>"; };
+		6B57D425D1E1CDEB00FB2843 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6C74F734B98FA0FF1D94EF24 /* Pods-Powerful Meal Planner-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Powerful Meal Planner-environment.h"; sourceTree = "<group>"; };
+		6DB5964C239B0E979E7F3286 /* Pods-Powerful Meal Planner-FSCalendar-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Powerful Meal Planner-FSCalendar-umbrella.h"; sourceTree = "<group>"; };
+		7F0BC33B498667EA6F27875B /* FSCalendar.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FSCalendar.m; path = FSCalendar/FSCalendar.m; sourceTree = "<group>"; };
+		88E0BE3375052C2093B9BA25 /* Pods-Powerful Meal Planner-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Powerful Meal Planner-frameworks.sh"; sourceTree = "<group>"; };
+		8BCDA7BC30803D225BF2368A /* Pods-Powerful Meal Planner.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Powerful Meal Planner.modulemap"; sourceTree = "<group>"; };
+		970CB62BDAF90D7B3AA6CF14 /* FSCalendarAppearance.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FSCalendarAppearance.m; path = FSCalendar/FSCalendarAppearance.m; sourceTree = "<group>"; };
+		9B2627AA5BC2661661B229EF /* FSCalendar.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FSCalendar.h; path = FSCalendar/FSCalendar.h; sourceTree = "<group>"; };
+		A97CBCE1E5D08AAF1C2B69F4 /* FSCalendar+IBExtension.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "FSCalendar+IBExtension.m"; path = "FSCalendar/FSCalendar+IBExtension.m"; sourceTree = "<group>"; };
+		B12DEEFDE81758DA7E4238CD /* Pods_Powerful_Meal_Planner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Powerful_Meal_Planner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF4B190C0E3BCEF3F9AC2B63 /* FSCalendarDynamicHeader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FSCalendarDynamicHeader.h; path = FSCalendar/FSCalendarDynamicHeader.h; sourceTree = "<group>"; };
+		BF55BACAF32D479366CEF105 /* UIView+FSExtension.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+FSExtension.m"; path = "FSCalendar/UIView+FSExtension.m"; sourceTree = "<group>"; };
+		C277921FCBEE25F676AFB858 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
+		C29984A6251755BFA5784EF2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		C30F97C28DA370F153C123F5 /* Pods-Powerful Meal Planner-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Powerful Meal Planner-dummy.m"; sourceTree = "<group>"; };
+		CFC3CB2026DF7D9A0EDA3E4D /* FSCalendar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FSCalendar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D25D243A81E3E2D36B943ECF /* Pods-Powerful Meal Planner-FSCalendar-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Powerful Meal Planner-FSCalendar-Private.xcconfig"; sourceTree = "<group>"; };
+		D650FC99754B2FB2EF09D58D /* FSCalendarHeaderTouchDeliver.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FSCalendarHeaderTouchDeliver.m; path = FSCalendar/FSCalendarHeaderTouchDeliver.m; sourceTree = "<group>"; };
+		DE15CDF273DD97353D2F0D8C /* Pods-Powerful Meal Planner-FSCalendar-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Powerful Meal Planner-FSCalendar-dummy.m"; sourceTree = "<group>"; };
+		E4B4046C50ACAFB3DFE1DBA1 /* FSCalendarAppearance.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FSCalendarAppearance.h; path = FSCalendar/FSCalendarAppearance.h; sourceTree = "<group>"; };
+		F236A922B8A351CE7CB99350 /* Pods-Powerful Meal Planner-FSCalendar.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Powerful Meal Planner-FSCalendar.xcconfig"; sourceTree = "<group>"; };
+		F28B31E2834F7245B5BF36A9 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F82010D6C8B094C00796E399 /* FSCalendarHeaderTouchDeliver.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FSCalendarHeaderTouchDeliver.h; path = FSCalendar/FSCalendarHeaderTouchDeliver.h; sourceTree = "<group>"; };
+		FAF708D9A16E9C83D78FB9EC /* Pods-Powerful Meal Planner-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Powerful Meal Planner-umbrella.h"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A530EE3F7C4B4A4818CC4D2E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				769ADAD8CBE8FC474FE89CC5 /* Foundation.framework in Frameworks */,
+				61A1CB213223DD1B9235A1E5 /* QuartzCore.framework in Frameworks */,
+				C4ED3FF23CF5E092B543D538 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B5D48D8B9C0FE6AFCE51C540 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B70F80BA51BDFAFA38BB959F /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		03B058695A90EFE5BAD03CF8 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				8E916406ED1BCD43EBE01E86 /* Pods-Powerful Meal Planner */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		05E1DFF44B5EEDB5B47794F2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CFC3CB2026DF7D9A0EDA3E4D /* FSCalendar.framework */,
+				B12DEEFDE81758DA7E4238CD /* Pods_Powerful_Meal_Planner.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		19E77F3C5E388041C7DA50C5 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				F28B31E2834F7245B5BF36A9 /* Info.plist */,
+				360558527D74F1C7DF96B1E7 /* Pods-Powerful Meal Planner-FSCalendar.modulemap */,
+				F236A922B8A351CE7CB99350 /* Pods-Powerful Meal Planner-FSCalendar.xcconfig */,
+				D25D243A81E3E2D36B943ECF /* Pods-Powerful Meal Planner-FSCalendar-Private.xcconfig */,
+				DE15CDF273DD97353D2F0D8C /* Pods-Powerful Meal Planner-FSCalendar-dummy.m */,
+				4D876C57CF3387D5AF5D06CD /* Pods-Powerful Meal Planner-FSCalendar-prefix.pch */,
+				6DB5964C239B0E979E7F3286 /* Pods-Powerful Meal Planner-FSCalendar-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Pods-Powerful Meal Planner-FSCalendar";
+			sourceTree = "<group>";
+		};
+		1F19641F99744092E6DF1E5F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				488FDB89B266F2B5E0B4D16C /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2160597DEAAD921A49B275E8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E018DACFABBA59D50EECB73D /* FSCalendar */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		488FDB89B266F2B5E0B4D16C /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				C29984A6251755BFA5784EF2 /* Foundation.framework */,
+				C277921FCBEE25F676AFB858 /* QuartzCore.framework */,
+				420D97FA315FB72C8E9455DE /* UIKit.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		8E916406ED1BCD43EBE01E86 /* Pods-Powerful Meal Planner */ = {
+			isa = PBXGroup;
+			children = (
+				6B57D425D1E1CDEB00FB2843 /* Info.plist */,
+				8BCDA7BC30803D225BF2368A /* Pods-Powerful Meal Planner.modulemap */,
+				4A8271D64641F0A3EF7863F7 /* Pods-Powerful Meal Planner-acknowledgements.markdown */,
+				0C7921E70602B443FFE8199A /* Pods-Powerful Meal Planner-acknowledgements.plist */,
+				C30F97C28DA370F153C123F5 /* Pods-Powerful Meal Planner-dummy.m */,
+				6C74F734B98FA0FF1D94EF24 /* Pods-Powerful Meal Planner-environment.h */,
+				88E0BE3375052C2093B9BA25 /* Pods-Powerful Meal Planner-frameworks.sh */,
+				0F57764074DF940F6D0EEB8E /* Pods-Powerful Meal Planner-resources.sh */,
+				FAF708D9A16E9C83D78FB9EC /* Pods-Powerful Meal Planner-umbrella.h */,
+				64456D102492BF8A8F28456F /* Pods-Powerful Meal Planner.debug.xcconfig */,
+				0D927E04FB6A1B5FB0EE1DB0 /* Pods-Powerful Meal Planner.release.xcconfig */,
+			);
+			name = "Pods-Powerful Meal Planner";
+			path = "Target Support Files/Pods-Powerful Meal Planner";
+			sourceTree = "<group>";
+		};
+		C04FB120F4E3707AB79674E4 = {
+			isa = PBXGroup;
+			children = (
+				26CFCB9B5F1D7E7168383102 /* Podfile */,
+				1F19641F99744092E6DF1E5F /* Frameworks */,
+				2160597DEAAD921A49B275E8 /* Pods */,
+				05E1DFF44B5EEDB5B47794F2 /* Products */,
+				03B058695A90EFE5BAD03CF8 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		E018DACFABBA59D50EECB73D /* FSCalendar */ = {
+			isa = PBXGroup;
+			children = (
+				9B2627AA5BC2661661B229EF /* FSCalendar.h */,
+				7F0BC33B498667EA6F27875B /* FSCalendar.m */,
+				25C07AB2B63DFEC7DD18BC1B /* FSCalendar+IBExtension.h */,
+				A97CBCE1E5D08AAF1C2B69F4 /* FSCalendar+IBExtension.m */,
+				E4B4046C50ACAFB3DFE1DBA1 /* FSCalendarAppearance.h */,
+				970CB62BDAF90D7B3AA6CF14 /* FSCalendarAppearance.m */,
+				41841F6E50C170B7F6EEC6CC /* FSCalendarCell.h */,
+				2C5E6D2CF04C4DEA45232302 /* FSCalendarCell.m */,
+				BF4B190C0E3BCEF3F9AC2B63 /* FSCalendarDynamicHeader.h */,
+				20FEDC278FBBDC9032293D67 /* FSCalendarHeader.h */,
+				5A116AB1387AE896771FA662 /* FSCalendarHeader.m */,
+				F82010D6C8B094C00796E399 /* FSCalendarHeaderTouchDeliver.h */,
+				D650FC99754B2FB2EF09D58D /* FSCalendarHeaderTouchDeliver.m */,
+				20E17B2DE00D0735F2E67A65 /* NSDate+FSExtension.h */,
+				64530977DF141D5E8476F256 /* NSDate+FSExtension.m */,
+				30E1EE944BCC625DA0019A26 /* UIView+FSExtension.h */,
+				BF55BACAF32D479366CEF105 /* UIView+FSExtension.m */,
+				19E77F3C5E388041C7DA50C5 /* Support Files */,
+			);
+			path = FSCalendar;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		587FA684544E802F42B4F0C8 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC88745A2AC88F6B5A6FBA99 /* FSCalendar+IBExtension.h in Headers */,
+				3F510748FB53D45136ADC2D9 /* FSCalendar.h in Headers */,
+				3BB77538C6A7271525592685 /* FSCalendarAppearance.h in Headers */,
+				9FFF8ED5D6440E18EF993A19 /* FSCalendarCell.h in Headers */,
+				988E0DC20B5BC39A0C12AFA1 /* FSCalendarDynamicHeader.h in Headers */,
+				D9DC7FF1397E607AB6143934 /* FSCalendarHeader.h in Headers */,
+				5DDF884E81BB4DBB9E2724E5 /* FSCalendarHeaderTouchDeliver.h in Headers */,
+				C0CEADCA57A2B8183DF4624D /* NSDate+FSExtension.h in Headers */,
+				9E815FA829A9039E0C344F1E /* Pods-Powerful Meal Planner-FSCalendar-umbrella.h in Headers */,
+				8FA91236A2E55B5ADF80C3BF /* UIView+FSExtension.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B78156F79C843B23A158E18D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3391CEFFECCA582A749650CB /* Pods-Powerful Meal Planner-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		77EAC7A3B004C6A13F33CFC7 /* Pods-Powerful Meal Planner-FSCalendar */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6945992A73FFBBAF4EAE9571 /* Build configuration list for PBXNativeTarget "Pods-Powerful Meal Planner-FSCalendar" */;
+			buildPhases = (
+				E8E00ED07094D631CD4531E4 /* Sources */,
+				A530EE3F7C4B4A4818CC4D2E /* Frameworks */,
+				587FA684544E802F42B4F0C8 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-Powerful Meal Planner-FSCalendar";
+			productName = "Pods-Powerful Meal Planner-FSCalendar";
+			productReference = CFC3CB2026DF7D9A0EDA3E4D /* FSCalendar.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		E363041E12907D3FF0ACD3B6 /* Pods-Powerful Meal Planner */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 14F6A8AE3D916C5A2EA9997A /* Build configuration list for PBXNativeTarget "Pods-Powerful Meal Planner" */;
+			buildPhases = (
+				821F4869E113C64B409A93ED /* Sources */,
+				B5D48D8B9C0FE6AFCE51C540 /* Frameworks */,
+				B78156F79C843B23A158E18D /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4FD9932FAD29CF05C015CBA3 /* PBXTargetDependency */,
+			);
+			name = "Pods-Powerful Meal Planner";
+			productName = "Pods-Powerful Meal Planner";
+			productReference = B12DEEFDE81758DA7E4238CD /* Pods_Powerful_Meal_Planner.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9CCED507A3D87F8A59B0CFFB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0640;
+			};
+			buildConfigurationList = 35F0C1C1E5BC0C2F229F0851 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = C04FB120F4E3707AB79674E4;
+			productRefGroup = 05E1DFF44B5EEDB5B47794F2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E363041E12907D3FF0ACD3B6 /* Pods-Powerful Meal Planner */,
+				77EAC7A3B004C6A13F33CFC7 /* Pods-Powerful Meal Planner-FSCalendar */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		821F4869E113C64B409A93ED /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BEBE8FC16D4FDDF3D16AA243 /* Pods-Powerful Meal Planner-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E8E00ED07094D631CD4531E4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7C31104B10E1E69E3C03A5CF /* FSCalendar+IBExtension.m in Sources */,
+				04123B10AA06D459598D8C0A /* FSCalendar.m in Sources */,
+				075E6805CFC0D2DE98240EF9 /* FSCalendarAppearance.m in Sources */,
+				CC222A1C2CF8A1C22EE11B17 /* FSCalendarCell.m in Sources */,
+				72F1EA05809A50D35ACE749F /* FSCalendarHeader.m in Sources */,
+				3A83F1D47BD6C978C6633838 /* FSCalendarHeaderTouchDeliver.m in Sources */,
+				6021690F22360CD8F58592D0 /* NSDate+FSExtension.m in Sources */,
+				E7B67D8DF462A8EDB24CD85C /* Pods-Powerful Meal Planner-FSCalendar-dummy.m in Sources */,
+				D2C8136CA35B210EA1E053DB /* UIView+FSExtension.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4FD9932FAD29CF05C015CBA3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-Powerful Meal Planner-FSCalendar";
+			target = 77EAC7A3B004C6A13F33CFC7 /* Pods-Powerful Meal Planner-FSCalendar */;
+			targetProxy = 9ED1C7FD842E1921B8B66B16 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		007AC54842452F9663CA987E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		150E67CA5FB6259D3757A231 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D25D243A81E3E2D36B943ECF /* Pods-Powerful Meal Planner-FSCalendar-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-Powerful Meal Planner-FSCalendar/Pods-Powerful Meal Planner-FSCalendar-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Pods-Powerful Meal Planner-FSCalendar/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-Powerful Meal Planner-FSCalendar/Pods-Powerful Meal Planner-FSCalendar.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = FSCalendar;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		684AAB1F99CF206A173EF7C8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 64456D102492BF8A8F28456F /* Pods-Powerful Meal Planner.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Powerful Meal Planner/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-Powerful Meal Planner/Pods-Powerful Meal Planner.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_Powerful_Meal_Planner;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		AA4D1D55409473F68372CFC2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D25D243A81E3E2D36B943ECF /* Pods-Powerful Meal Planner-FSCalendar-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-Powerful Meal Planner-FSCalendar/Pods-Powerful Meal Planner-FSCalendar-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Pods-Powerful Meal Planner-FSCalendar/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-Powerful Meal Planner-FSCalendar/Pods-Powerful Meal Planner-FSCalendar.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = FSCalendar;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		C99BCFFB493459B099C4AAAC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0D927E04FB6A1B5FB0EE1DB0 /* Pods-Powerful Meal Planner.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Powerful Meal Planner/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-Powerful Meal Planner/Pods-Powerful Meal Planner.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_Powerful_Meal_Planner;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		EEAB3240927B77A582B10B38 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				ONLY_ACTIVE_ARCH = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		14F6A8AE3D916C5A2EA9997A /* Build configuration list for PBXNativeTarget "Pods-Powerful Meal Planner" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				684AAB1F99CF206A173EF7C8 /* Debug */,
+				C99BCFFB493459B099C4AAAC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		35F0C1C1E5BC0C2F229F0851 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EEAB3240927B77A582B10B38 /* Debug */,
+				007AC54842452F9663CA987E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6945992A73FFBBAF4EAE9571 /* Build configuration list for PBXNativeTarget "Pods-Powerful Meal Planner-FSCalendar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA4D1D55409473F68372CFC2 /* Debug */,
+				150E67CA5FB6259D3757A231 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9CCED507A3D87F8A59B0CFFB /* Project object */;
+}

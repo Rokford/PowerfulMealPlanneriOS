@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BC971FB8D793BC5477EA9B57 /* Pods_Powerful_Meal_Planner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA93B3B4A6C3420CF8E53896 /* Pods_Powerful_Meal_Planner.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		C90A34121B8765D100F111C7 /* CommonUnitCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C90A34111B8765D100F111C7 /* CommonUnitCell.m */; };
 		C95A6FEA1B7C850900D165D3 /* PMPTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C95A6FE91B7C850900D165D3 /* PMPTableViewCell.m */; };
 		C96888BB1B7B863400610097 /* AddShoppingItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C96888BA1B7B863400610097 /* AddShoppingItemViewController.m */; };
@@ -34,6 +35,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		24F52038BBCAA162A32EAE07 /* Pods-Powerful Meal Planner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Powerful Meal Planner.release.xcconfig"; path = "Pods/Target Support Files/Pods-Powerful Meal Planner/Pods-Powerful Meal Planner.release.xcconfig"; sourceTree = "<group>"; };
+		AC440985E92151599D6206A1 /* Pods-Powerful Meal Planner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Powerful Meal Planner.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Powerful Meal Planner/Pods-Powerful Meal Planner.debug.xcconfig"; sourceTree = "<group>"; };
 		C90A34101B8765D100F111C7 /* CommonUnitCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonUnitCell.h; sourceTree = "<group>"; };
 		C90A34111B8765D100F111C7 /* CommonUnitCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonUnitCell.m; sourceTree = "<group>"; };
 		C95A6FE81B7C850900D165D3 /* PMPTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMPTableViewCell.h; sourceTree = "<group>"; };
@@ -60,6 +63,7 @@
 		C9D6C9AF1B8DBD8E0053C5F3 /* AddRecipeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddRecipeViewController.m; sourceTree = "<group>"; };
 		C9D6C9B11B8DFBD30053C5F3 /* AddIngredientViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddIngredientViewController.h; sourceTree = "<group>"; };
 		C9D6C9B21B8DFBD30053C5F3 /* AddIngredientViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddIngredientViewController.m; sourceTree = "<group>"; };
+		EA93B3B4A6C3420CF8E53896 /* Pods_Powerful_Meal_Planner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Powerful_Meal_Planner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC971FB8D793BC5477EA9B57 /* Pods_Powerful_Meal_Planner.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,12 +85,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AD0C6C41D8EDB07BC5F287EC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AC440985E92151599D6206A1 /* Pods-Powerful Meal Planner.debug.xcconfig */,
+				24F52038BBCAA162A32EAE07 /* Pods-Powerful Meal Planner.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		C8D2243C0AC576D508BC8B4A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EA93B3B4A6C3420CF8E53896 /* Pods_Powerful_Meal_Planner.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C969B0541B78963900679069 = {
 			isa = PBXGroup;
 			children = (
 				C969B05F1B78963900679069 /* PowerfulMealPlanner */,
 				C969B07C1B78963900679069 /* PowerfulMealPlannerTests */,
 				C969B05E1B78963900679069 /* Products */,
+				AD0C6C41D8EDB07BC5F287EC /* Pods */,
+				C8D2243C0AC576D508BC8B4A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -159,9 +183,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C969B0831B78963900679069 /* Build configuration list for PBXNativeTarget "Powerful Meal Planner" */;
 			buildPhases = (
+				3ECF3C0953A18A8BE86F1447 /* Check Pods Manifest.lock */,
 				C969B0591B78963900679069 /* Sources */,
 				C969B05A1B78963900679069 /* Frameworks */,
 				C969B05B1B78963900679069 /* Resources */,
+				4F80A96F3287FB3D157C3FAC /* Copy Pods Resources */,
+				2E9EE32152D4D900737737A6 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -246,6 +273,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2E9EE32152D4D900737737A6 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Powerful Meal Planner/Pods-Powerful Meal Planner-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3ECF3C0953A18A8BE86F1447 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		4F80A96F3287FB3D157C3FAC /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Powerful Meal Planner/Pods-Powerful Meal Planner-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C969B0591B78963900679069 /* Sources */ = {
@@ -385,20 +460,40 @@
 		};
 		C969B0841B78963900679069 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AC440985E92151599D6206A1 /* Pods-Powerful Meal Planner.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = PowerfulMealPlanner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"Pods-Powerful Meal Planner-FSCalendar\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"UIKit\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
 		C969B0851B78963900679069 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24F52038BBCAA162A32EAE07 /* Pods-Powerful Meal Planner.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = PowerfulMealPlanner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"Pods-Powerful Meal Planner-FSCalendar\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"UIKit\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -406,7 +501,6 @@
 		C969B0871B78963900679069 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -418,14 +512,13 @@
 				INFOPLIST_FILE = PowerfulMealPlannerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PowerfulMealPlanner.app/PowerfulMealPlanner";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Powerful Meal Planner.app/Powerful Meal Planner";
 			};
 			name = Debug;
 		};
 		C969B0881B78963900679069 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -433,7 +526,7 @@
 				INFOPLIST_FILE = PowerfulMealPlannerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PowerfulMealPlanner.app/PowerfulMealPlanner";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Powerful Meal Planner.app/Powerful Meal Planner";
 			};
 			name = Release;
 		};
