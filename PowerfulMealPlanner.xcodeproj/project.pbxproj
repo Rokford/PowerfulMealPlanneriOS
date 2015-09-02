@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		BC971FB8D793BC5477EA9B57 /* Pods_Powerful_Meal_Planner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA93B3B4A6C3420CF8E53896 /* Pods_Powerful_Meal_Planner.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		C90A34121B8765D100F111C7 /* CommonUnitCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C90A34111B8765D100F111C7 /* CommonUnitCell.m */; };
+		C93F205F1B9470170034117B /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C93F205E1B9470170034117B /* CalendarViewController.m */; };
 		C95A6FEA1B7C850900D165D3 /* PMPTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C95A6FE91B7C850900D165D3 /* PMPTableViewCell.m */; };
 		C96888BB1B7B863400610097 /* AddShoppingItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C96888BA1B7B863400610097 /* AddShoppingItemViewController.m */; };
 		C969B0631B78963900679069 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C969B0621B78963900679069 /* main.m */; };
@@ -19,6 +20,8 @@
 		C969B0711B78963900679069 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C969B0701B78963900679069 /* Images.xcassets */; };
 		C969B0741B78963900679069 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C969B0721B78963900679069 /* LaunchScreen.xib */; };
 		C969B0801B78963900679069 /* PowerfulMealPlannerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C969B07F1B78963900679069 /* PowerfulMealPlannerTests.m */; };
+		C9A9A6AA1B95AC40007B3866 /* RecipesForCalendarTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A9A6A91B95AC40007B3866 /* RecipesForCalendarTableViewController.m */; };
+		C9A9A6AD1B95D68E007B3866 /* RecipesToCheckViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A9A6AC1B95D68E007B3866 /* RecipesToCheckViewController.m */; };
 		C9D6C9AD1B8DBD550053C5F3 /* RecipesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9D6C9AC1B8DBD550053C5F3 /* RecipesViewController.m */; };
 		C9D6C9B01B8DBD8E0053C5F3 /* AddRecipeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9D6C9AF1B8DBD8E0053C5F3 /* AddRecipeViewController.m */; };
 		C9D6C9B31B8DFBD30053C5F3 /* AddIngredientViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9D6C9B21B8DFBD30053C5F3 /* AddIngredientViewController.m */; };
@@ -39,6 +42,8 @@
 		AC440985E92151599D6206A1 /* Pods-Powerful Meal Planner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Powerful Meal Planner.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Powerful Meal Planner/Pods-Powerful Meal Planner.debug.xcconfig"; sourceTree = "<group>"; };
 		C90A34101B8765D100F111C7 /* CommonUnitCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonUnitCell.h; sourceTree = "<group>"; };
 		C90A34111B8765D100F111C7 /* CommonUnitCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonUnitCell.m; sourceTree = "<group>"; };
+		C93F205D1B9470170034117B /* CalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarViewController.h; sourceTree = "<group>"; };
+		C93F205E1B9470170034117B /* CalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarViewController.m; sourceTree = "<group>"; };
 		C95A6FE81B7C850900D165D3 /* PMPTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMPTableViewCell.h; sourceTree = "<group>"; };
 		C95A6FE91B7C850900D165D3 /* PMPTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMPTableViewCell.m; sourceTree = "<group>"; };
 		C96888B91B7B863400610097 /* AddShoppingItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddShoppingItemViewController.h; sourceTree = "<group>"; };
@@ -57,6 +62,10 @@
 		C969B0791B78963900679069 /* PowerfulMealPlannerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PowerfulMealPlannerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C969B07E1B78963900679069 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C969B07F1B78963900679069 /* PowerfulMealPlannerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PowerfulMealPlannerTests.m; sourceTree = "<group>"; };
+		C9A9A6A81B95AC40007B3866 /* RecipesForCalendarTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipesForCalendarTableViewController.h; sourceTree = "<group>"; };
+		C9A9A6A91B95AC40007B3866 /* RecipesForCalendarTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipesForCalendarTableViewController.m; sourceTree = "<group>"; };
+		C9A9A6AB1B95D68E007B3866 /* RecipesToCheckViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipesToCheckViewController.h; sourceTree = "<group>"; };
+		C9A9A6AC1B95D68E007B3866 /* RecipesToCheckViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipesToCheckViewController.m; sourceTree = "<group>"; };
 		C9D6C9AB1B8DBD550053C5F3 /* RecipesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RecipesViewController.h; path = ../RecipesViewController.h; sourceTree = "<group>"; };
 		C9D6C9AC1B8DBD550053C5F3 /* RecipesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RecipesViewController.m; path = ../RecipesViewController.m; sourceTree = "<group>"; };
 		C9D6C9AE1B8DBD8E0053C5F3 /* AddRecipeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddRecipeViewController.h; sourceTree = "<group>"; };
@@ -137,6 +146,12 @@
 				C9D6C9AF1B8DBD8E0053C5F3 /* AddRecipeViewController.m */,
 				C9D6C9B11B8DFBD30053C5F3 /* AddIngredientViewController.h */,
 				C9D6C9B21B8DFBD30053C5F3 /* AddIngredientViewController.m */,
+				C93F205D1B9470170034117B /* CalendarViewController.h */,
+				C93F205E1B9470170034117B /* CalendarViewController.m */,
+				C9A9A6A81B95AC40007B3866 /* RecipesForCalendarTableViewController.h */,
+				C9A9A6A91B95AC40007B3866 /* RecipesForCalendarTableViewController.m */,
+				C9A9A6AB1B95D68E007B3866 /* RecipesToCheckViewController.h */,
+				C9A9A6AC1B95D68E007B3866 /* RecipesToCheckViewController.m */,
 				C95A6FE81B7C850900D165D3 /* PMPTableViewCell.h */,
 				C95A6FE91B7C850900D165D3 /* PMPTableViewCell.m */,
 				C969B06D1B78963900679069 /* Main.storyboard */,
@@ -328,15 +343,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				C96888BB1B7B863400610097 /* AddShoppingItemViewController.m in Sources */,
+				C9A9A6AA1B95AC40007B3866 /* RecipesForCalendarTableViewController.m in Sources */,
 				C969B0691B78963900679069 /* PowerfulMealPlanner.xcdatamodeld in Sources */,
 				C9D6C9B01B8DBD8E0053C5F3 /* AddRecipeViewController.m in Sources */,
 				C969B0661B78963900679069 /* AppDelegate.m in Sources */,
 				C969B06C1B78963900679069 /* ShoppingListViewController.m in Sources */,
 				C9D6C9AD1B8DBD550053C5F3 /* RecipesViewController.m in Sources */,
 				C969B0631B78963900679069 /* main.m in Sources */,
+				C9A9A6AD1B95D68E007B3866 /* RecipesToCheckViewController.m in Sources */,
 				C9D6C9B31B8DFBD30053C5F3 /* AddIngredientViewController.m in Sources */,
 				C90A34121B8765D100F111C7 /* CommonUnitCell.m in Sources */,
 				C95A6FEA1B7C850900D165D3 /* PMPTableViewCell.m in Sources */,
+				C93F205F1B9470170034117B /* CalendarViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
