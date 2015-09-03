@@ -10,12 +10,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PowerfulMealPlanner/CalendarViewController.m"
-            timestampString = "462965734.586585"
+            timestampString = "462973215.913613"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "365"
-            endingLineNumber = "365"
-            landmarkName = "-calendar:subtitleForDate:"
+            startingLineNumber = "444"
+            endingLineNumber = "444"
+            landmarkName = "-calendar:hasEventForDate:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -26,12 +26,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PowerfulMealPlanner/CalendarViewController.m"
-            timestampString = "462897586.564169"
+            timestampString = "462973215.913613"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "188"
-            endingLineNumber = "188"
-            landmarkName = "-controller:didChangeObject:atIndexPath:forChangeType:newIndexPath:"
+            startingLineNumber = "419"
+            endingLineNumber = "419"
+            landmarkName = "-calendar:subtitleForDate:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

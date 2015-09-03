@@ -22,6 +22,10 @@
 @property(strong, nonatomic)
     NSFetchedResultsController *fetchedResultsController;
 @property(weak, nonatomic) IBOutlet UIBarButtonItem *mealsAssignedLabel;
+@property(weak, nonatomic) IBOutlet UIBarButtonItem *createListBarItem;
+@property(assign, nonatomic) BOOL selectingDays;
+@property(strong, nonatomic) NSDate *firstDay;
+@property(strong, nonatomic) NSDate *lastDay;
 
 @end
 
@@ -107,8 +111,46 @@
   [self.calendar reloadData];
 }
 
-- (IBAction)addRecipe:(id)sender
+- (IBAction)createList:(id)sender
 {
+  if (!self.selectingDays) {
+    [[[UIAlertView alloc]
+            initWithTitle:@"Create Shopping List"
+                  message:@"Make sure the first day for list is selected, then "
+                  @"tap 'Select last day' in upper right corner and "
+                  @"select the last day.\n Then just tap 'Finish the "
+                  @"list' to complete your shopping list"
+                 delegate:self
+        cancelButtonTitle:@"Dismiss"
+        otherButtonTitles:nil, nil] show];
+
+    self.createListBarItem.title = @"Select last day";
+    self.selectingDays = YES;
+  } else {
+    if (!self.firstDay) {
+      NSDate *firstDay = self.calendar.selectedDate;
+      self.firstDay = firstDay;
+
+      NSDate *tomorrow = [firstDay dateByAddingTimeInterval:60 * 60 * 24 * 7];
+
+      [self.calendar setSelectedDate:tomorrow];
+
+      dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 0.2 * NSEC_PER_SEC),
+                     dispatch_get_main_queue(),
+                     ^{ [self.calendar reloadData]; });
+
+      self.createListBarItem.title = @"Finish the list";
+    } else {
+      self.selectingDays = NO;
+      self.firstDay = nil;
+      self.lastDay = nil;
+      self.createListBarItem.title = @"Create list";
+
+      [self.calendar reloadData];
+
+      // create the list
+    }
+  }
 }
 
 - (void)fetchAndSetRecipesForMonth:(NSDate *)currentMonth
@@ -287,11 +329,6 @@
 
     [days removeObject:dayToRemove];
     [self.calendar reloadData];
-
-    //    if (record) {
-    //      [self.fetchedResultsController.managedObjectContext
-    //      deleteObject:record];
-    //    }
   }
 }
 
@@ -299,6 +336,11 @@
 
 - (void)calendar:(FSCalendar *)calendara didSelectDate:(NSDate *)date
 {
+  //  if (self.selectingDays && self.firstDay) {
+  //    self.lastDay = date;
+  //    if (self.lastDay) [self.calendar reloadData];
+  //  }
+
   NSCalendar *calendar = [NSCalendar currentCalendar];
 
   // components of current month
@@ -353,6 +395,17 @@
   }
 
   [self.recipesTableView reloadData];
+
+  if (self.selectingDays && self.firstDay) {
+    self.lastDay = date;
+
+    if (self.lastDay) {
+
+      dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 0.2 * NSEC_PER_SEC),
+                     dispatch_get_main_queue(),
+                     ^{ [self.calendar reloadData]; });
+    }
+  }
 }
 
 - (BOOL)calendar:(FSCalendar *)calendar shouldSelectDate:(NSDate *)date
@@ -387,7 +440,14 @@
 
 - (BOOL)calendar:(FSCalendar *)calendar hasEventForDate:(NSDate *)date
 {
-  return false;
+  if (self.selectingDays && self.firstDay) {
+    if ([date compare:self.firstDay] == NSOrderedAscending) return NO;
+
+    if ([date compare:self.lastDay] == NSOrderedDescending) return NO;
+
+    return YES;
+  } else
+    return NO;
 }
 
 #pragma mark - Navigation

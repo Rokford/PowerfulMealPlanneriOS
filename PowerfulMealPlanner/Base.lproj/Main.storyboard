@@ -650,7 +650,6 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="SQb-gx-VQh"/>
                                     <barButtonItem systemItem="add" id="CbA-sE-5Iq">
                                         <connections>
-                                            <action selector="addRecipe:" destination="gl3-n8-rzo" id="Pi7-EB-ebc"/>
                                             <segue destination="3aQ-BS-GdZ" kind="push" id="Qon-GN-C1h"/>
                                         </connections>
                                     </barButtonItem>
@@ -679,10 +678,15 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Calendar" image="Calendar" id="BA3-jF-BE8"/>
                     <navigationItem key="navigationItem" title="Calendar" id="W8Z-9W-vQ8">
-                        <barButtonItem key="rightBarButtonItem" title="Create list" id="7Bz-G4-5Id"/>
+                        <barButtonItem key="rightBarButtonItem" title="Create list" id="7Bz-G4-5Id">
+                            <connections>
+                                <action selector="createList:" destination="gl3-n8-rzo" id="G9K-ae-ctI"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="calendar" destination="q0z-xe-2Fp" id="D0n-Qg-IRi"/>
+                        <outlet property="createListBarItem" destination="7Bz-G4-5Id" id="kwK-wh-rNf"/>
                         <outlet property="mealsAssignedLabel" destination="iUe-Kj-WEj" id="S14-ki-R2L"/>
                         <outlet property="recipesTableView" destination="s7p-dB-mEM" id="6NJ-dr-L5Q"/>
                     </connections>
