@@ -8,8 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "FSCalendar.h"
+#import <CoreData/CoreData.h>
 
 @interface CalendarViewController
-    : UIViewController <FSCalendarDelegate, FSCalendarDataSource>
+    : UIViewController <FSCalendarDelegate, FSCalendarDataSource,
+                        NSFetchedResultsControllerDelegate, UITableViewDelegate,
+                        UITableViewDataSource>
 
 @end
