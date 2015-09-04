@@ -310,7 +310,7 @@
         <!--Help-->
         <scene sceneID="uH8-aN-Di2">
             <objects>
-                <viewController id="9Qx-hH-Z61" sceneMemberID="viewController">
+                <viewController id="9Qx-hH-Z61" customClass="HelpViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="O7A-Jb-mfy"/>
                         <viewControllerLayoutGuide type="bottom" id="rkZ-B8-EvA"/>
@@ -319,27 +319,55 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5gl-jE-Qi0">
-                                <rect key="frame" x="16" y="84" width="288" height="395"/>
-                            </scrollView>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="BCV-vA-poW">
-                                <rect key="frame" x="140" y="472" width="39" height="37"/>
+                                <rect key="frame" x="141" y="429" width="39" height="37"/>
                             </pageControl>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GYX-CU-ud5">
+                                <rect key="frame" x="40" y="92" width="240" height="327"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Kkd-NC-KQJ" appends="YES" id="RK9-Y8-kPO"/>
+                                    <outletCollection property="gestureRecognizers" destination="dO9-nd-y3O" appends="YES" id="x5b-6O-lOq"/>
+                                </connections>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KaM-rY-tvH">
+                                <rect key="frame" x="140" y="476" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="BCV-vA-poW" secondAttribute="centerX" id="5qC-3u-EeG"/>
-                            <constraint firstItem="5gl-jE-Qi0" firstAttribute="leading" secondItem="rbp-y5-9tK" secondAttribute="leadingMargin" id="BUU-8a-NO8"/>
-                            <constraint firstItem="rkZ-B8-EvA" firstAttribute="top" secondItem="BCV-vA-poW" secondAttribute="bottom" constant="10" id="Di5-CW-84Q"/>
-                            <constraint firstItem="5gl-jE-Qi0" firstAttribute="top" secondItem="O7A-Jb-mfy" secondAttribute="bottom" constant="20" id="Xwz-m8-x2g"/>
-                            <constraint firstItem="rkZ-B8-EvA" firstAttribute="top" secondItem="5gl-jE-Qi0" secondAttribute="bottom" constant="40" id="ntw-vn-saa"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="5gl-jE-Qi0" secondAttribute="trailing" id="tmx-V5-Ykt"/>
+                            <constraint firstItem="GYX-CU-ud5" firstAttribute="leading" secondItem="rbp-y5-9tK" secondAttribute="leadingMargin" constant="24" id="Q4Q-wO-ayk"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="GYX-CU-ud5" secondAttribute="trailing" constant="24" id="bZ5-Vo-i5X"/>
+                            <constraint firstItem="KaM-rY-tvH" firstAttribute="centerX" secondItem="BCV-vA-poW" secondAttribute="centerX" id="lty-ug-P7l"/>
+                            <constraint firstItem="GYX-CU-ud5" firstAttribute="top" secondItem="O7A-Jb-mfy" secondAttribute="bottom" constant="28" id="n2m-fa-2zU"/>
+                            <constraint firstItem="KaM-rY-tvH" firstAttribute="top" secondItem="BCV-vA-poW" secondAttribute="bottom" constant="10" id="nBu-B0-xgr"/>
+                            <constraint firstItem="BCV-vA-poW" firstAttribute="top" secondItem="GYX-CU-ud5" secondAttribute="bottom" constant="10" id="s9D-qo-k63"/>
+                            <constraint firstItem="rkZ-B8-EvA" firstAttribute="top" secondItem="GYX-CU-ud5" secondAttribute="bottom" constant="100" id="ytf-ep-4Ln"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Help" image="Help" id="LlY-3V-71L"/>
                     <navigationItem key="navigationItem" id="rPI-ya-hbL"/>
+                    <connections>
+                        <outlet property="imageView" destination="GYX-CU-ud5" id="CFD-rY-EKC"/>
+                        <outlet property="pageControl" destination="BCV-vA-poW" id="sgO-DG-wZA"/>
+                        <outlet property="textLabel" destination="KaM-rY-tvH" id="PFI-S8-0lQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hkS-xb-6Yh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="Kkd-NC-KQJ">
+                    <connections>
+                        <action selector="swipeRight:" destination="9Qx-hH-Z61" id="M69-ab-REh"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="left" id="dO9-nd-y3O">
+                    <connections>
+                        <action selector="swipeLeft:" destination="9Qx-hH-Z61" id="Y6e-Pz-qEp"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1131" y="1276"/>
         </scene>

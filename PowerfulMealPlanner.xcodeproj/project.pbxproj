@@ -21,6 +21,8 @@
 		C969B0741B78963900679069 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C969B0721B78963900679069 /* LaunchScreen.xib */; };
 		C969B0801B78963900679069 /* PowerfulMealPlannerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C969B07F1B78963900679069 /* PowerfulMealPlannerTests.m */; };
 		C9A9A6AD1B95D68E007B3866 /* RecipesToCheckViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A9A6AC1B95D68E007B3866 /* RecipesToCheckViewController.m */; };
+		C9B63E471B999EDF009EFF36 /* HelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B63E461B999EDF009EFF36 /* HelpViewController.m */; };
+		C9B63E491B99A4DE009EFF36 /* Help in Resources */ = {isa = PBXBuildFile; fileRef = C9B63E481B99A4DE009EFF36 /* Help */; };
 		C9D6C9AD1B8DBD550053C5F3 /* RecipesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9D6C9AC1B8DBD550053C5F3 /* RecipesViewController.m */; };
 		C9D6C9B01B8DBD8E0053C5F3 /* AddRecipeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9D6C9AF1B8DBD8E0053C5F3 /* AddRecipeViewController.m */; };
 		C9D6C9B31B8DFBD30053C5F3 /* AddIngredientViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9D6C9B21B8DFBD30053C5F3 /* AddIngredientViewController.m */; };
@@ -63,6 +65,9 @@
 		C969B07F1B78963900679069 /* PowerfulMealPlannerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PowerfulMealPlannerTests.m; sourceTree = "<group>"; };
 		C9A9A6AB1B95D68E007B3866 /* RecipesToCheckViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipesToCheckViewController.h; sourceTree = "<group>"; };
 		C9A9A6AC1B95D68E007B3866 /* RecipesToCheckViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipesToCheckViewController.m; sourceTree = "<group>"; };
+		C9B63E451B999EDF009EFF36 /* HelpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpViewController.h; sourceTree = "<group>"; };
+		C9B63E461B999EDF009EFF36 /* HelpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpViewController.m; sourceTree = "<group>"; };
+		C9B63E481B99A4DE009EFF36 /* Help */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Help; sourceTree = "<group>"; };
 		C9D6C9AB1B8DBD550053C5F3 /* RecipesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RecipesViewController.h; path = ../RecipesViewController.h; sourceTree = "<group>"; };
 		C9D6C9AC1B8DBD550053C5F3 /* RecipesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RecipesViewController.m; path = ../RecipesViewController.m; sourceTree = "<group>"; };
 		C9D6C9AE1B8DBD8E0053C5F3 /* AddRecipeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddRecipeViewController.h; sourceTree = "<group>"; };
@@ -147,16 +152,19 @@
 				C93F205E1B9470170034117B /* CalendarViewController.m */,
 				C9A9A6AB1B95D68E007B3866 /* RecipesToCheckViewController.h */,
 				C9A9A6AC1B95D68E007B3866 /* RecipesToCheckViewController.m */,
+				C9B63E451B999EDF009EFF36 /* HelpViewController.h */,
+				C9B63E461B999EDF009EFF36 /* HelpViewController.m */,
 				C95A6FE81B7C850900D165D3 /* PMPTableViewCell.h */,
 				C95A6FE91B7C850900D165D3 /* PMPTableViewCell.m */,
+				C90A34101B8765D100F111C7 /* CommonUnitCell.h */,
+				C90A34111B8765D100F111C7 /* CommonUnitCell.m */,
 				C969B06D1B78963900679069 /* Main.storyboard */,
 				C969B0611B78963900679069 /* Info.plist */,
+				C9B63E481B99A4DE009EFF36 /* Help */,
 				C969B0701B78963900679069 /* Images.xcassets */,
 				C969B0721B78963900679069 /* LaunchScreen.xib */,
 				C969B0671B78963900679069 /* PowerfulMealPlanner.xcdatamodeld */,
 				C969B0601B78963900679069 /* Supporting Files */,
-				C90A34101B8765D100F111C7 /* CommonUnitCell.h */,
-				C90A34111B8765D100F111C7 /* CommonUnitCell.m */,
 			);
 			path = PowerfulMealPlanner;
 			sourceTree = "<group>";
@@ -269,6 +277,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C969B06F1B78963900679069 /* Main.storyboard in Resources */,
+				C9B63E491B99A4DE009EFF36 /* Help in Resources */,
 				C969B0741B78963900679069 /* LaunchScreen.xib in Resources */,
 				C969B0711B78963900679069 /* Images.xcassets in Resources */,
 			);
@@ -330,6 +339,7 @@
 				C969B0631B78963900679069 /* main.m in Sources */,
 				C9A9A6AD1B95D68E007B3866 /* RecipesToCheckViewController.m in Sources */,
 				C9D6C9B31B8DFBD30053C5F3 /* AddIngredientViewController.m in Sources */,
+				C9B63E471B999EDF009EFF36 /* HelpViewController.m in Sources */,
 				C90A34121B8765D100F111C7 /* CommonUnitCell.m in Sources */,
 				C95A6FEA1B7C850900D165D3 /* PMPTableViewCell.m in Sources */,
 				C93F205F1B9470170034117B /* CalendarViewController.m in Sources */,
