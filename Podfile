@@ -3,8 +3,8 @@
 
 target 'Powerful Meal Planner' do
 
-use_frameworks!
 pod 'FSCalendar'
+pod 'UIAlertView+Blocks'
 
 end
 

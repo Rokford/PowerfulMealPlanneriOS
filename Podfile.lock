@@ -1,10 +1,13 @@
 PODS:
   - FSCalendar (0.12.3)
+  - UIAlertView+Blocks (0.9)
 
 DEPENDENCIES:
   - FSCalendar
+  - UIAlertView+Blocks
 
 SPEC CHECKSUMS:
   FSCalendar: 986fd247c821539f4074bdc22ae2879bd34c8966
+  UIAlertView+Blocks: a46c99c5144f6c5dbc7d62fd2a0678daceec89a3
 
 COCOAPODS: 0.37.2

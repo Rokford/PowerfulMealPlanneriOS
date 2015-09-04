@@ -14,8 +14,8 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E363041E12907D3FF0ACD3B6"
-               BuildableName = "Pods_Powerful_Meal_Planner.framework"
+               BlueprintIdentifier = "80BE1F918405527D62EADF1D"
+               BuildableName = "libPods-Powerful Meal Planner.a"
                BlueprintName = "Pods-Powerful Meal Planner"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>

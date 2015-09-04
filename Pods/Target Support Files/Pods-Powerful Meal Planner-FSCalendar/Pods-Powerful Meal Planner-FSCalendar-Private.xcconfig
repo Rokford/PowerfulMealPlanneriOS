@@ -1,9 +1,6 @@
 #include "Pods-Powerful Meal Planner-FSCalendar.xcconfig"
-CONFIGURATION_BUILD_DIR = $PODS_FRAMEWORK_BUILD_PATH
-FRAMEWORK_SEARCH_PATHS = "$PODS_FRAMEWORK_BUILD_PATH"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Private" "${PODS_ROOT}/Headers/Private/FSCalendar" "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/FSCalendar"
+HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Private" "${PODS_ROOT}/Headers/Private/FSCalendar" "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/FSCalendar" "${PODS_ROOT}/Headers/Public/UIAlertView+Blocks"
 OTHER_LDFLAGS = ${PODS_POWERFUL_MEAL_PLANNER_FSCALENDAR_OTHER_LDFLAGS} -ObjC
-PODS_FRAMEWORK_BUILD_PATH = $(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/Pods-Powerful Meal Planner
 PODS_ROOT = ${SRCROOT}
 SKIP_INSTALL = YES
