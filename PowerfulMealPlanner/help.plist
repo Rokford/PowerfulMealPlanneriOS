@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<string>Application is divided into four sections - Shopping List, Recipes List, Calendar and Help.
+
+Start by adding your recipes to the Recipes List. Then, use Calendar to assign meals for upcoming days. Finally, generate your interactive Shopping List for desired number of days.</string>
+	<string>Recipes List contains every recipe you added so far. Your recipes list will be initially empty.
+
+Tap &quot;+&quot; to create a new recipe. Then, type the name, add all the ingredients and save it. Try to put here every recipe you know and use!
+
+When you are ready to plan you meals, head to the Calendar section.</string>
+	<string>In Calendar section you can plan your meals for any day, and then automatically generate the shopping list, without worrying about looking up the ingredients.
+
+Tap any day to view meals already assigned to this day and add new ones.</string>
+	<string>When you already assigned recipes to the days, you can generate the shopping list.
+
+Tap the &quot;Create List&quot; in upper-right corner of the screen - you will be guided through the process.
+
+When it&apos;s done, navigate back to Shopping List section to check your shopping list.</string>
+	<string>Shopping list has two modes - &apos;shopping&apos; and &apos;edit&apos;. Change them via switch in upper left corner of the screen.
+
+Shopping mode is designed as an interactive version of traditional shopping list. Tapping at item makes it &quot;checked&quot; - it will instantly appear grayed out and moved to the bottom of the list.
+Tap the items as you put them in your shopping cart!</string>
+	<string>You can assign category to a shopping item upon creating it, or leave it as &quot;Other.
+
+There are lists for common units and quantities. While initially empty, they will be populated once you type any unit or quantity, allowing you to quickly select them instead of typing again. </string>
+	<string>You can always remove any shopping item, recipe, ingredient or meal assigned to a day by swiping left on given row and tapping &apos;delete&apos; button</string>
+</array>
+</plist>

@@ -157,8 +157,8 @@
     [item setValue:@(![[item valueForKey:@"isChecked"] boolValue])
             forKey:@"isChecked"];
 
-    //    NSError *error = nil;
-    //    [item.managedObjectContext save:&error];
+    NSError *error = nil;
+    [item.managedObjectContext save:&error];
 
     [self reloadTableForSelectedSegment:self.segmentedControlOutlet
                                             .selectedSegmentIndex];
@@ -181,9 +181,9 @@
   [PMPCell.itemUnitLabel setText:[item valueForKey:@"unit"]];
 
   if (self.listSwitch.isOn && [[item valueForKey:@"isChecked"] boolValue]) {
-    PMPCell.itemNameLabel.textColor = [UIColor grayColor];
-    PMPCell.itemQuantityLabel.textColor = [UIColor grayColor];
-    PMPCell.itemUnitLabel.textColor = [UIColor grayColor];
+    PMPCell.itemNameLabel.textColor = [UIColor lightGrayColor];
+    PMPCell.itemQuantityLabel.textColor = [UIColor lightGrayColor];
+    PMPCell.itemUnitLabel.textColor = [UIColor lightGrayColor];
   } else {
     PMPCell.itemNameLabel.textColor = [UIColor blackColor];
     PMPCell.itemQuantityLabel.textColor = [UIColor blackColor];

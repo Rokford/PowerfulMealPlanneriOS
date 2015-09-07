@@ -12,6 +12,7 @@
 
 @property(weak, nonatomic) IBOutlet UIPageControl *pageControl;
 @property(strong, nonatomic) NSArray *helpImages;
+@property(strong, nonatomic) NSArray *helpTexts;
 @property(weak, nonatomic) IBOutlet UIImageView *imageView;
 @property(weak, nonatomic) IBOutlet UILabel *textLabel;
 
@@ -28,6 +29,10 @@
   self.helpImages = [[NSBundle mainBundle] pathsForResourcesOfType:@"png"
                                                        inDirectory:@"Help"];
 
+  NSString *plistPath =
+      [[NSBundle mainBundle] pathForResource:@"help" ofType:@"plist"];
+  self.helpTexts = [NSArray arrayWithContentsOfFile:plistPath];
+
   self.imageView.contentMode = UIViewContentModeScaleAspectFit;
 
   self.pageControl.numberOfPages = self.helpImages.count;
@@ -36,6 +41,8 @@
   [self.imageView
       setImage:[UIImage
                    imageWithContentsOfFile:self.helpImages[self.imageCounter]]];
+
+  self.textLabel.text = self.helpTexts[0];
 }
 
 - (IBAction)swipeRight:(id)sender
@@ -43,6 +50,7 @@
   if (self.imageCounter > 0) {
     self.imageCounter--;
     [self.pageControl setCurrentPage:self.imageCounter];
+    self.textLabel.text = self.helpTexts[self.imageCounter];
 
     [UIView transitionWithView:self.imageView
                       duration:0.5f
@@ -61,6 +69,7 @@
   if (self.imageCounter < self.helpImages.count - 1) {
     self.imageCounter++;
     [self.pageControl setCurrentPage:self.imageCounter];
+    self.textLabel.text = self.helpTexts[self.imageCounter];
 
     [UIView transitionWithView:self.imageView
                       duration:0.5f

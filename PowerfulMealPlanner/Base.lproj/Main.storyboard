@@ -327,39 +327,41 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="BCV-vA-poW">
-                                <rect key="frame" x="141" y="429" width="39" height="37"/>
+                                <rect key="frame" x="141" y="299" width="39" height="37"/>
                                 <color key="pageIndicatorTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="currentPageIndicatorTintColor" red="0.01176470588" green="0.60784313729999995" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
                             </pageControl>
                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GYX-CU-ud5">
-                                <rect key="frame" x="40" y="92" width="240" height="327"/>
+                                <rect key="frame" x="40" y="79" width="240" height="220"/>
                                 <gestureRecognizers/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="Kkd-NC-KQJ" appends="YES" id="RK9-Y8-kPO"/>
                                     <outletCollection property="gestureRecognizers" destination="dO9-nd-y3O" appends="YES" id="x5b-6O-lOq"/>
                                 </connections>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KaM-rY-tvH">
-                                <rect key="frame" x="140" y="476" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="clip" numberOfLines="12" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KaM-rY-tvH">
+                                <rect key="frame" x="16" y="336" width="288" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="KaM-rY-tvH" secondAttribute="trailing" id="3bU-Jz-wrr"/>
                             <constraint firstAttribute="centerX" secondItem="BCV-vA-poW" secondAttribute="centerX" id="5qC-3u-EeG"/>
+                            <constraint firstItem="KaM-rY-tvH" firstAttribute="leading" secondItem="rbp-y5-9tK" secondAttribute="leadingMargin" id="HQc-JZ-bYO"/>
                             <constraint firstItem="GYX-CU-ud5" firstAttribute="leading" secondItem="rbp-y5-9tK" secondAttribute="leadingMargin" constant="24" id="Q4Q-wO-ayk"/>
                             <constraint firstAttribute="trailingMargin" secondItem="GYX-CU-ud5" secondAttribute="trailing" constant="24" id="bZ5-Vo-i5X"/>
                             <constraint firstItem="KaM-rY-tvH" firstAttribute="centerX" secondItem="BCV-vA-poW" secondAttribute="centerX" id="lty-ug-P7l"/>
-                            <constraint firstItem="GYX-CU-ud5" firstAttribute="top" secondItem="O7A-Jb-mfy" secondAttribute="bottom" constant="28" id="n2m-fa-2zU"/>
-                            <constraint firstItem="KaM-rY-tvH" firstAttribute="top" secondItem="BCV-vA-poW" secondAttribute="bottom" constant="10" id="nBu-B0-xgr"/>
-                            <constraint firstItem="BCV-vA-poW" firstAttribute="top" secondItem="GYX-CU-ud5" secondAttribute="bottom" constant="10" id="s9D-qo-k63"/>
-                            <constraint firstItem="rkZ-B8-EvA" firstAttribute="top" secondItem="GYX-CU-ud5" secondAttribute="bottom" constant="100" id="ytf-ep-4Ln"/>
+                            <constraint firstItem="GYX-CU-ud5" firstAttribute="top" secondItem="O7A-Jb-mfy" secondAttribute="bottom" constant="15" id="n2m-fa-2zU"/>
+                            <constraint firstItem="KaM-rY-tvH" firstAttribute="top" secondItem="BCV-vA-poW" secondAttribute="bottom" id="nBu-B0-xgr"/>
+                            <constraint firstItem="BCV-vA-poW" firstAttribute="top" secondItem="GYX-CU-ud5" secondAttribute="bottom" id="s9D-qo-k63"/>
+                            <constraint firstItem="rkZ-B8-EvA" firstAttribute="top" secondItem="GYX-CU-ud5" secondAttribute="bottom" constant="220" id="ytf-ep-4Ln"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Help" image="Help" id="LlY-3V-71L"/>
-                    <navigationItem key="navigationItem" id="rPI-ya-hbL"/>
+                    <navigationItem key="navigationItem" title="Help" id="rPI-ya-hbL"/>
                     <connections>
                         <outlet property="imageView" destination="GYX-CU-ud5" id="CFD-rY-EKC"/>
                         <outlet property="pageControl" destination="BCV-vA-poW" id="sgO-DG-wZA"/>
