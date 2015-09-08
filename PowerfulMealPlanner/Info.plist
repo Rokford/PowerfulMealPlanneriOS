@@ -20,6 +20,15 @@
 	<string>????</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>Item categories</key>
+	<array>
+		<string>Meat &amp; fish</string>
+		<string>Dairy &amp; bread</string>
+		<string>Fruits &amp; vegetables</string>
+		<string>Cereals &amp; spices</string>
+		<string>Tinned &amp; frozen</string>
+		<string>Other</string>
+	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>UILaunchStoryboardName</key>
@@ -33,15 +42,6 @@
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
-	</array>
-	<key>Item categories</key>
-	<array>
-		<string>Meat &amp; fish</string>
-		<string>Dairy &amp; bread</string>
-		<string>Fruits &amp; vegetables</string>
-		<string>Cereals &amp; spices</string>
-		<string>Tinned &amp; frozen</string>
-		<string>Other</string>
 	</array>
 </dict>
 </plist>
